@@ -15,7 +15,8 @@
 }
 
 .header .blog-name a {
-    color: #fff;;
+    color: #fff;
+    ;
 }
 
 .header .navbar {
@@ -62,5 +63,32 @@
 }
 
 .theme-bg-light {
-    background: rgba(78,93,108,0.09);
+    background: rgba(78, 93, 108, 0.09);
+}
+
+@media (max-width: 991.98px) {
+    .header {
+        max-width: 991.98px;
+        position: static;
+        width: inherit;
+        height: auto;
+    }
+    .header .blog-name {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 1.2rem;
+    }
+    .header .navbar {
+        padding: 1rem;
+    }
+    .main-wrapper {
+        margin-left: 0;
+    }
+    .profile-image {
+        width: 40%;
+    }
+    .profile-image-big {
+        width: 100%;
+    }
 }
