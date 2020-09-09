@@ -66,6 +66,40 @@
     background: rgba(78, 93, 108, 0.09);
 }
 
+.profile-image-big {
+    width: 40%;
+}
+
+.section-title {
+    font-size: 2rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.section-title:before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background: #007bff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.overview-section .item {
+    margin-bottom: 2rem;
+}
+
+.overview-section .item-title {
+    font-size: 1rem;
+}
+
+.overview-section .item-icon {
+    font-size: 1.875rem;
+    color: #54B689;
+}
+
 @media (max-width: 991.98px) {
     .header {
         max-width: 991.98px;
@@ -91,8 +125,4 @@
     .profile-image-big {
         width: 100%;
     }
-}
-
-.profile-image-big {
-    width: 40%;
 }
