@@ -95,6 +95,11 @@
     font-size: 1rem;
 }
 
+.overview-section .item-desc {
+    color: #4f4f4f;
+    font-size: 0.875rem;
+}
+
 .overview-section .item-icon {
     font-size: 1.875rem;
     color: #54B689;
