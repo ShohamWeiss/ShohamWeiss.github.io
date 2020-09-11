@@ -182,6 +182,11 @@
     position: relative;
 }
 
+.icon-list img,
+.icon-list svg {
+    font-size: 22px;
+}
+
 @media (max-width: 991.98px) {
     .header {
         max-width: 991.98px;
