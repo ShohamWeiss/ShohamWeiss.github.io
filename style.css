@@ -212,4 +212,7 @@
     .profile-image-big {
         width: 100%;
     }
+    .item-inner .long {
+        height: 5rem;
+    }
 }
