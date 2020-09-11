@@ -38,6 +38,15 @@
     padding: .5rem 1rem;
 }
 
+.profile-teaser .name {
+    font-size: 3rem;
+}
+
+.profile-teaser .tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
 .list-inline-item:not(:last-child) {
     margin-right: .5rem;
 }
