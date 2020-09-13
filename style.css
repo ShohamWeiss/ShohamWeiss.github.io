@@ -232,3 +232,26 @@
         width: 100%;
     }
 }
+
+
+/* portfolio */
+
+.filters {
+    list-style: none;
+    font-size: 0.875rem;
+}
+
+.filters .type.active {
+    border-top: 2px solid #54B689;
+    color: #54B689;
+    font-weight: bold;
+}
+
+.filters .type {
+    display: inline-block;
+    padding: 0.275rem 0.25rem;
+    cursor: pointer;
+    margin-right: 2rem;
+    color: #8f8f8f;
+    font-weight: bold;
+}
