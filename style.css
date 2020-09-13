@@ -124,6 +124,7 @@
 
 .project-card .card-title {
     font-size: 1.125rem;
+    font-weight: bold;
 }
 
 .project-card .card-text {
@@ -131,18 +132,13 @@
 }
 
 .project-card .card-img-holder {
-    max-height: 200px;
+    max-height: 400px;
     overflow: hidden;
     vertical-align: middle;
 }
 
 .project-card .card-img {
     border-radius: 0;
-}
-
-.card-img-holder img {
-    flex-shrink: 0;
-    width: 100%;
 }
 
 .project-card .link-mask {
@@ -196,6 +192,13 @@
     font-size: 22px;
 }
 
+@media (min-width: 991.98px) {
+    .card-img-holder img {
+        flex-shrink: 0;
+        height: 100%;
+    }
+}
+
 @media (max-width: 991.98px) {
     .header {
         max-width: 991.98px;
@@ -223,5 +226,9 @@
     }
     .item-inner .long {
         height: 5rem;
+    }
+    .card-img-holder img {
+        flex-shrink: 0;
+        width: 100%;
     }
 }
