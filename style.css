@@ -205,6 +205,9 @@
         flex-shrink: 0;
         height: 100%;
     }
+    .isotope-item {
+        height: 18rem;
+    }
 }
 
 @media (max-width: 991.98px) {
@@ -262,10 +265,6 @@
     margin-right: 2rem;
     color: #8f8f8f;
     font-weight: bold;
-}
-
-.isotope-item {
-    height: 18rem;
 }
 
 .project-card .row {
