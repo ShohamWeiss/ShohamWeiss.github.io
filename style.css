@@ -264,6 +264,14 @@
     font-weight: bold;
 }
 
+.isotope-item {
+    height: 18rem;
+}
+
+.project-card .row {
+    height: 100%;
+}
+
 body {
     animation: fadeInAnimation ease 0.3s;
     animation-iteration-count: 1;
