@@ -222,6 +222,16 @@
     }
 }
 
+@media (min-width: 760px) and (max-width: 991.98px) {
+    .isotope-item {
+        height: 45rem;
+    }
+    .card-img-holder img {
+        flex-shrink: 0;
+        height: 100%;
+    }
+}
+
 @media (max-width: 991.98px) {
     .header {
         max-width: 991.98px;
