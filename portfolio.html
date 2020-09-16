@@ -143,12 +143,14 @@
                                     </div>
                                 </div>
                                 <div class="link-mask ">
-                                    <a class="link-mask-link " href="project.html "></a>
-                                    <div class="link-mask-text ">
-                                        <a class="btn btn-secondary " href="project.html ">
-                                            <i class="fas fa-eye mr-2 "></i>View Project
-                                        </a>
-                                    </div>
+                                    <button type="button" data-toggle="modal" data-target="#myModal">
+                                        <a class="link-mask-link " href="project.html "></a>
+                                        <div class="link-mask-text ">
+                                            <a class="btn btn-secondary " data-toggle="modal">
+                                                <i class="fas fa-eye mr-2 "></i>View Project
+                                            </a>
+                                        </div>
+                                    </button>
                                 </div>
                                 <!--//link-mask-->
                             </div>
@@ -381,4 +383,29 @@
     <script type="text/javascript " src="assets/plugins/isotope.pkgd.min.js "></script>
 
     <script type="text/javascript " src="assets/js/isotope-custom.js "></script>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
