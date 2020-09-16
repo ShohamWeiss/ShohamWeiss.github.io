@@ -1,6 +1,5 @@
 $(document).ready(function() {
-
-
+    $('body').show();
     /* ======= Isotope plugin ======= */
     /* Ref: http://isotope.metafizzy.co/ */
     // init Isotope    
