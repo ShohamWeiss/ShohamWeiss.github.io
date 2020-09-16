@@ -210,6 +210,18 @@
     }
 }
 
+@media (min-width: 1140px) and (max-width: 1220px) {
+    .isotope-item {
+        height: 20rem;
+    }
+}
+
+@media (min-width: 991.98px) and (max-width: 1140px) {
+    .isotope-item {
+        height: 25rem;
+    }
+}
+
 @media (max-width: 991.98px) {
     .header {
         max-width: 991.98px;
