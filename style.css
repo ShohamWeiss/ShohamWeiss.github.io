@@ -275,8 +275,8 @@
 }
 
 .filters .type.active {
-    border-top: 2px solid #54B689;
-    color: #54B689;
+    border-top: 2px solid #007bff;
+    color: #007bff;
     font-weight: bold;
 }
 
@@ -292,6 +292,15 @@
 .project-card .row {
     height: 100%;
 }
+
+.modalSwitch {
+    background: transparent;
+    border: none !important;
+    font-size: 0;
+}
+
+
+/* General */
 
 body {
     animation: fadeInAnimation ease 0.3s;

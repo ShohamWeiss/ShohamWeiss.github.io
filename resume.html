@@ -24,7 +24,9 @@
 <body>
     <article class="resume-wrapper text-center position-relative">
         <a href="index.html" class="btn btn-primary mb-2 mt-2">Return Home</a>
-        <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+        <button class="btn btn-secondary" onclick="showAcademic()" id="acadbtn">Go to Academic CV</button>
+        <button class="btn btn-secondary" onclick="showProfessional()" id="profbtn" hidden=true>Go to Professional CV</button>
+        <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg" id="prof">
             <header class="resume-header pt-4 pt-md-0">
                 <div class="media flex-column flex-md-row">
                     <img class="mr-3 img-fluid picture mx-auto" src="assets/images/profile.jpg" alt="">
@@ -410,8 +412,11 @@
 
 
         </div>
+        <iframe src="assets/CV.pdf" id="acad" hidden=true></iframe>
         <a href="index.html" class="btn btn-primary mt-4">Return Home</a>
     </article>
 </body>
 
 </html>
+
+<script src="script.js"></script>
