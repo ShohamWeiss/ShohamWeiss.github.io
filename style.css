@@ -299,6 +299,17 @@
     font-size: 0;
 }
 
+.modal .modal-img-holder {
+    height: 200px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.modal .modal-img-holder img {
+    flex-shrink: 0;
+    width: 100%;
+}
+
 
 /* General */
 

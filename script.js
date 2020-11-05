@@ -29,10 +29,10 @@ $(document).ready(function() {
 });
 
 function fillModal(a) {
-    var title = document.getElementsByClassName('card-title')[a].textContent;
-    var summary = document.getElementsByClassName('card-text')[a].textContent;
-    document.getElementsByClassName('modal-title')[0].innerHTML = title;
-    document.getElementsByClassName('modal-body')[0].innerHTML = summary;
+    // var title = document.getElementsByClassName('card-title')[a].textContent;
+    // var summary = document.getElementsByClassName('card-text')[a].textContent;
+    // document.getElementsByClassName('modal-title')[0].innerHTML = title;
+    // document.getElementsByClassName('modal-body')[0].innerHTML = summary;
 }
 
 function showAcademic() {
