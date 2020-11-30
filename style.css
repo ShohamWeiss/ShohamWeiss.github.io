@@ -300,12 +300,14 @@
 }
 
 .modal .modal-img-holder {
-    height: 200px;
+    height: 300px;
     overflow: hidden;
     vertical-align: middle;
 }
 
 .modal .modal-img-holder img {
+    position: relative;
+    top: -50%;
     flex-shrink: 0;
     width: 100%;
 }
