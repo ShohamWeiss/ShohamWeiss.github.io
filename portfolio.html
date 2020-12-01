@@ -181,7 +181,7 @@
                                 </div>
                                 <div class="link-mask ">
                                     <div class="link-mask-text ">
-                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" onclick="fillModal(1)">
+                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#HandGestureModal">
                                             <i class="fas fa-eye mr-2 "></i>View Project
                                         </button>
                                     </div>
@@ -189,98 +189,200 @@
                                 <!--//link-mask-->
                             </div>
                             <!--//card-->
+                            <!-- The Modal -->
+                            <div class="modal fade " id="HandGestureModal">
+                                <div class="modal-dialog modal-dialog-centered modal-lg ">
+                                    <div class="modal-content ">
+                                        <div class="modal-img-holder ">
+                                            <img src="assets/images/nn.png " alt="image ">
+                                        </div>
+                                        <!-- Modal Header -->
+                                        <div class="modal-header ">
+                                            <h4 class="modal-title ">Hand Gesture Computer Vision</h4>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body ">
+                                            <h5>A Deep Neural Network Model that can recognize which direction a hand is pointing based on a picture. A raspberry pi runs the model and points a lazer in the same direction</h5>
+                                            <p>Self-driven project</p>
+                                            <p><strong>Tech Used:</strong></p>
+                                            <ul>
+                                                <li><i class="fab fa-python mr-1 " style="color: rgb(217, 221, 14) "></i> Python</li>
+                                                <li><img src="assets/images/Tensorflow_logo.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-20 mr-1 "> TensorFlow</li>
+                                                <li><img src="assets/images/raspberry-pi.svg " alt="c# " class="svg-inline--fa fa-java fa-w-20 mr-1 "> Raspberry-pi</li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!--//rpi col-->
-                        <div class="isotope-item col-md-6 mb-5 iot webapp">
-                            <div class="card project-card ">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-4 card-img-holder">
-                                        <img src="assets/images/rpidoorlock.png" alt="card-img">
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title "><a href="project.html " class="theme-link ">Raspberry Pi Doorlock</a></h5>
-                                            <p class="card-text">Control you bolt lock with your phone. 3D printed and designed attachment to fit on and rotate a bolt lock. Slick and secure interface for controlling the doorlock
-                                            </p>
-                                            <p class="card-text "><small class="text-muted ">CS 498: Internet of Things</small></p>
-                                            <div class="icon-list">
-                                                <i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i>
-                                                <img src="assets/images/raspberry-pi.svg" alt="c#" class="svg-inline--fa fa-java fa-w-14">
-                                                <img src="assets/images/Apache_Feather_Logo.svg" alt="c#" class="svg-inline--fa fa-java fa-w-20">
-                                                <img src="assets/images/mariadb.svg" alt="c#" class="svg-inline--fa fa-java fa-w-20 mr-2">
-                                                <i class="fab fa-js-square mr-2" style="color: rgb(221 205 14)"></i>
-                                                <i class="fab fa-html5 mr-2" style="color: rgb(221 119 14)"></i>
-                                                <i class="fab fa-css3-alt mr-2" style="color: rgb(14, 45, 221)"></i>
-                                                <i class="fab fa-php mr-2" style="color: rgb(89, 105, 197)"></i>
-                                            </div>
-                                            <p class="card-text">2019</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--//link-mask-->
-                                <div class="link-mask ">
-                                    <div class="link-mask-text ">
-                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" onclick="fillModal(2)">
-                                            <i class="fas fa-eye mr-2 "></i>View Project
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--//card-->
-                        </div>
-                        <!--//neutrino col-->
-                        <div class="isotope-item col-md-6 mb-5 physics">
-                            <div class="card project-card ">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-4 card-img-holder">
-                                        <img src="assets/images/nuclear.png" alt="card-img">
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <a href="project.html " class="theme-link ">Neutrinoless Double Beta Decay Research</a>
-                                            </h5>
-                                            <p class="card-text">Research for the next Enriched Xenon Observatory (nEXO). 1-tonne experiment searching for a rare nuclear physics phenomenon with potential for finding new physics.</p>
-                                            <p class="card-text "><small class="text-muted ">Physics Research</small></p>
-                                            <div class="icon-list">
-                                                <i class="fab fa-python mr-1" style="color: rgb(217, 221, 14)"></i>
-                                                <img src="assets/images/labview-logo.png" alt="c#" class="svg-inline--fa fa-java fa-w-20 mr-1">
-                                            </div>
-                                            <p class="card-text">2017-2019</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="link-mask ">
-                                    <div class="link-mask-text ">
-                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" onclick="fillModal(3)">
-                                            <i class="fas fa-eye mr-2 "></i>View Project
-                                        </button>
-                                    </div>
-                                </div>
-                                <!--//link-mask-->
-                            </div>
-                            <!--//card-->
-                        </div>
-                        <!--//spotify col-->
-                        <div class="isotope-item col-md-6 mb-5 webapp">
+                        <div class="isotope-item col-md-6 mb-5 iot webapp ">
                             <div class="card project-card ">
                                 <div class="row no-gutters ">
                                     <div class="col-lg-4 card-img-holder ">
-                                        <img src="assets/images/nio.png" alt="image ">
+                                        <img src="assets/images/rpidoorlock.png " alt="card-img ">
+                                    </div>
+                                    <div class="col-lg-8 ">
+                                        <div class="card-body ">
+                                            <h5 class="card-title "><a href="project.html " class="theme-link ">Raspberry Pi Doorlock</a></h5>
+                                            <p class="card-text ">Control you bolt lock with your phone. 3D printed and designed attachment to fit on and rotate a bolt lock. Slick and secure interface for controlling the doorlock
+                                            </p>
+                                            <p class="card-text "><small class="text-muted ">CS 498: Internet of Things</small></p>
+                                            <div class="icon-list ">
+                                                <i class="fab fa-python mr-2 " style="color: rgb(217, 221, 14) "></i>
+                                                <img src="assets/images/raspberry-pi.svg " alt="c# " class="svg-inline--fa fa-java fa-w-14 ">
+                                                <img src="assets/images/Apache_Feather_Logo.svg " alt="c# " class="svg-inline--fa fa-java fa-w-20 ">
+                                                <img src="assets/images/mariadb.svg " alt="c# " class="svg-inline--fa fa-java fa-w-20 mr-2 ">
+                                                <i class="fab fa-js-square mr-2 " style="color: rgb(221 205 14) "></i>
+                                                <i class="fab fa-html5 mr-2 " style="color: rgb(221 119 14) "></i>
+                                                <i class="fab fa-css3-alt mr-2 " style="color: rgb(14, 45, 221) "></i>
+                                                <i class="fab fa-php mr-2 " style="color: rgb(89, 105, 197) "></i>
+                                            </div>
+                                            <p class="card-text ">2019</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--//link-mask-->
+                                <div class="link-mask ">
+                                    <div class="link-mask-text ">
+                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#RpiModal">
+                                            <i class="fas fa-eye mr-2 "></i>View Project
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//card-->
+                            <!-- The Modal -->
+                            <div class="modal fade" id="RpiModal">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-img-holder">
+                                            <img src="assets/images/rpidoorlock.png" alt="image">
+                                        </div>
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Raspberry Pi Doorlock</h4>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <h5>Bolt lock attachment that you can control with your phone. 3D print and design to fit and rotate bolt lock. Raspberry pi runs a local server and controls a servo motor. Slick website interface for controlling
+                                                the doorlock
+                                            </h5>
+                                            <p><strong>Class:</strong> CS 418</p>
+                                            <p><strong>Tech Used:</strong></p>
+                                            <ul>
+                                                <li><i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i> Python</li>
+                                                <li><img src="assets/images/raspberry-pi.svg" alt="c#" class="svg-inline--fa fa-java fa-w-14"> Raspberry-pi</li>
+                                                <li><img src="assets/images/Apache_Feather_Logo.svg" alt="c#" class="svg-inline--fa fa-java fa-w-20"> Apache2</li>
+                                                <li><img src="assets/images/mariadb.svg" alt="c#" class="svg-inline--fa fa-java fa-w-20 mr-2"> MariaDB</li>
+                                                <li><i class="fab fa-js-square mr-2" style="color: rgb(221 205 14)"></i> JavaScript</li>
+                                                <li><i class="fab fa-html5 mr-2" style="color: rgb(221 119 14)"></i> HTML5</li>
+                                                <li><i class="fab fa-css3-alt mr-2" style="color: rgb(14, 45, 221)"></i> CSS</li>
+                                                <li><i class="fab fa-php mr-2" style="color: rgb(89, 105, 197)"></i> PHO</li>
+                                            </ul>
+                                            <p class="card-text">2019</p>
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//neutrino col-->
+                        <div class="isotope-item col-md-6 mb-5 physics ">
+                            <div class="card project-card ">
+                                <div class="row no-gutters ">
+                                    <div class="col-lg-4 card-img-holder ">
+                                        <img src="assets/images/nuclear.png " alt="card-img ">
+                                    </div>
+                                    <div class="col-lg-8 ">
+                                        <div class="card-body ">
+                                            <h5 class="card-title ">
+                                                <a href="project.html " class="theme-link ">Neutrinoless Double Beta Decay Research</a>
+                                            </h5>
+                                            <p class="card-text ">Research for the next Enriched Xenon Observatory (nEXO). 1-tonne experiment searching for a rare nuclear physics phenomenon with potential for finding new physics.</p>
+                                            <p class="card-text "><small class="text-muted ">Physics Research</small></p>
+                                            <div class="icon-list ">
+                                                <i class="fab fa-python mr-1 " style="color: rgb(217, 221, 14) "></i>
+                                                <img src="assets/images/labview-logo.png " alt="c# " class="svg-inline--fa fa-java fa-w-20 mr-1 ">
+                                            </div>
+                                            <p class="card-text ">2017-2019</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="link-mask ">
+                                    <div class="link-mask-text ">
+                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#NeutrinoModal">
+                                            <i class="fas fa-eye mr-2 "></i>View Project
+                                        </button>
+                                    </div>
+                                </div>
+                                <!--//link-mask-->
+                            </div>
+                            <!--//card-->
+                            <!-- The Modal -->
+                            <div class="modal fade" id="NeutrinoModal">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-img-holder">
+                                            <img src="assets/images/nuclear.png" alt="image">
+                                        </div>
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Neutrino-less Double Beta Decay Research</h4>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <h5>Research for the next Enriched Xenon Observatory (nEXO). 1-tonne experiment searching for a rare nuclear physics phenomenon with potential for finding new physics.
+                                            </h5>
+                                            <p><strong>Nuclear Physics Research</strong></p>
+                                            <p><strong>Tech Used:</strong></p>
+                                            <ul>
+                                                <li><i class="fab fa-python mr-1" style="color: rgb(217, 221, 14)"></i> Python</li>
+                                                <li><img src="assets/images/labview-logo.png" alt="c#" class="svg-inline--fa fa-java fa-w-20 mr-1"> LabView</li>
+                                            </ul>
+                                            <p class="card-text">2017-2019</p>
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//spotify col-->
+                        <div class="isotope-item col-md-6 mb-5 webapp ">
+                            <div class="card project-card ">
+                                <div class="row no-gutters ">
+                                    <div class="col-lg-4 card-img-holder ">
+                                        <img src="assets/images/nio.png " alt="image ">
                                     </div>
                                     <div class="col-lg-8 ">
                                         <div class="card-body ">
                                             <h5 class="card-title "><a href="project.html " class="theme-link ">Spotify Group Music Suggestion App</a></h5>
                                             <p class="card-text ">An application that suggests music for groups based on their Spotify song preferences.</p>
                                             <p class="card-text "><small class="text-muted ">CS 411: Database Systems</small></p>
-                                            <div class="icon-list">
-                                                <i class="fab fa-python mr-1" style="color: rgb(217, 221, 14)"></i>
-                                                <img src="assets/images/django.svg" alt="c#" class="svg-inline--fa fa-java fa-w-20 mr-1">
-                                                <img src="assets/images/Postgresql_elephant.svg" alt="c#" class="svg-inline--fa fa-java fa-w-20 mr-1"><i class="fab fa-js-square mr-2" style="color: rgb(221 205 14)"></i>
-                                                <i class="fab fa-html5 mr-2" style="color: rgb(221 119 14)"></i>
-                                                <i class="fab fa-css3-alt mr-2" style="color: rgb(14, 45, 221)"></i>
+                                            <div class="icon-list ">
+                                                <i class="fab fa-python mr-1 " style="color: rgb(217, 221, 14) "></i>
+                                                <img src="assets/images/django.svg " alt="c# " class="svg-inline--fa fa-java fa-w-20 mr-1 ">
+                                                <img src="assets/images/Postgresql_elephant.svg " alt="c# " class="svg-inline--fa fa-java fa-w-20 mr-1 "><i class="fab fa-js-square mr-2 " style="color: rgb(221 205 14) "></i>
+                                                <i class="fab fa-html5 mr-2 " style="color: rgb(221 119 14) "></i>
+                                                <i class="fab fa-css3-alt mr-2 " style="color: rgb(14, 45, 221) "></i>
                                             </div>
-                                            <p class="card-text">2019</p>
+                                            <p class="card-text ">2019</p>
                                         </div>
                                     </div>
                                 </div>
@@ -297,7 +399,7 @@
                             <!--//card-->
                         </div>
                         <!--//wind col-->
-                        <div class="isotope-item col-md-6 mb-5 physics iot">
+                        <div class="isotope-item col-md-6 mb-5 physics iot ">
                             <div class="card project-card ">
                                 <div class="row no-gutters ">
                                     <div class="col-lg-4 card-img-holder ">
@@ -308,10 +410,10 @@
                                             <h5 class="card-title "><a href="project.html " class="theme-link ">Wind Turbine Noise and Pressure Profile Research</a></h5>
                                             <p class="card-text ">Research of the Low Frequency Noise (LFN) profile in the vicinity of wind turbines. Study weather wind turbine noise can have health implications on surrounding neigborhoods.</p>
                                             <p class="card-text "><small class="text-muted ">Phys 398: Arduino Design</small></p>
-                                            <div class="icon-list">
-                                                <img src="assets/images/arduino.svg" alt="c#" class="svg-inline--fa fa-java fa-w-20 mr-1">
-                                                <i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i>
-                                                <img src="assets/images/C++_Logo.png" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
+                                            <div class="icon-list ">
+                                                <img src="assets/images/arduino.svg " alt="c# " class="svg-inline--fa fa-java fa-w-20 mr-1 ">
+                                                <i class="fab fa-python mr-2 " style="color: rgb(217, 221, 14) "></i>
+                                                <img src="assets/images/C++_Logo.png " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
                                             </div>
                                             <p class="card-text ">2019</p>
                                         </div>
@@ -330,7 +432,7 @@
                             <!--//card-->
                         </div>
                         <!--//col-->
-                        <div class="isotope-item col-md-6 mb-5 physics">
+                        <div class="isotope-item col-md-6 mb-5 physics ">
                             <div class="card project-card ">
                                 <div class="row no-gutters ">
                                     <div class="col-lg-4 card-img-holder ">
@@ -341,9 +443,9 @@
                                             <h5 class="card-title "><a href="project.html " class="theme-link ">Quantum Computing Simulator</a></h5>
                                             <p class="card-text ">Build a Quantum Computing Simulator to study Quantum Ciruit algorithms. Created Quantum Shor's circuit for factoring large numbers faster than classical computers.</p>
                                             <p class="card-text "><small class="text-muted ">Phys 498: Computational Physics</small></p>
-                                            <div class="icon-list">
-                                                <i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i>
-                                                <img src="assets/images/C++_Logo.png" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
+                                            <div class="icon-list ">
+                                                <i class="fab fa-python mr-2 " style="color: rgb(217, 221, 14) "></i>
+                                                <img src="assets/images/C++_Logo.png " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
                                             </div>
                                             <p class="card-text ">2020</p>
                                         </div>
@@ -362,20 +464,20 @@
                             <!--//card-->
                         </div>
                         <!--//col-->
-                        <div class="isotope-item col-md-6 mb-5 physics machinelearning">
+                        <div class="isotope-item col-md-6 mb-5 physics machinelearning ">
                             <div class="card project-card ">
                                 <div class="row no-gutters ">
                                     <div class="col-lg-4 card-img-holder ">
-                                        <img src="assets/images/nn2.png" alt="image ">
+                                        <img src="assets/images/nn2.png " alt="image ">
                                     </div>
                                     <div class="col-lg-8 ">
                                         <div class="card-body ">
                                             <h5 class="card-title "><a href="project.html " class="theme-link ">Shallow Neural Networks</a></h5>
                                             <p class="card-text ">Coded a Hopfield Neural Network and a Restricted Boltzmann Machine from scratch in C#. Studied the math behind the networks and implemented them. The models are used to restore images.</p>
                                             <p class="card-text "><small class="text-muted ">Phys 498: Computational Physics</small></p>
-                                            <div class="icon-list">
-                                                <i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i>
-                                                <img src="assets/images/C_Sharp_logo.svg" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
+                                            <div class="icon-list ">
+                                                <i class="fab fa-python mr-2 " style="color: rgb(217, 221, 14) "></i>
+                                                <img src="assets/images/C_Sharp_logo.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
                                             </div>
                                             <p class="card-text ">2020</p>
                                         </div>
@@ -394,22 +496,22 @@
                             <!--//card-->
                         </div>
                         <!--//col-->
-                        <div class="isotope-item col-md-6 mb-5 machinelearning">
+                        <div class="isotope-item col-md-6 mb-5 machinelearning ">
                             <div class="card project-card ">
                                 <div class="row no-gutters ">
                                     <div class="col-lg-4 card-img-holder ">
-                                        <img src="assets/images/selfdrivingsquare.png" alt="image ">
+                                        <img src="assets/images/selfdrivingsquare.png " alt="image ">
                                     </div>
                                     <div class="col-lg-8 ">
                                         <div class="card-body ">
                                             <h5 class="card-title "><a href="project.html " class="theme-link ">AI Dashboard</a></h5>
                                             <p class="card-text ">Built a Dashboard and Rear Camera that uses machine learning to detect if there is a person in the path of the car.</p>
                                             <p class="card-text "><small class="text-muted ">CS 498: Internet of Things</small></p>
-                                            <div class="icon-list">
-                                                <i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i>
-                                                <img src="assets/images/raspberry-pi.svg" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
-                                                <img src="assets/images/arduino.svg" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
-                                                <img src="assets/images/Tensorflow_logo.svg" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
+                                            <div class="icon-list ">
+                                                <i class="fab fa-python mr-2 " style="color: rgb(217, 221, 14) "></i>
+                                                <img src="assets/images/raspberry-pi.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
+                                                <img src="assets/images/arduino.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
+                                                <img src="assets/images/Tensorflow_logo.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
                                             </div>
                                             <p class="card-text ">2019</p>
                                         </div>
@@ -428,23 +530,23 @@
                             <!--//card-->
                         </div>
                         <!--//col-->
-                        <div class="isotope-item col-md-6 mb-5 machinelearning">
+                        <div class="isotope-item col-md-6 mb-5 machinelearning ">
                             <div class="card project-card ">
                                 <div class="row no-gutters ">
                                     <div class="col-lg-4 card-img-holder ">
-                                        <img src="assets/images/heart-mainsquare.jpg" alt="image ">
+                                        <img src="assets/images/heart-mainsquare.jpg " alt="image ">
                                     </div>
                                     <div class="col-lg-8 ">
                                         <div class="card-body ">
                                             <h5 class="card-title "><a href="project.html " class="theme-link ">AI Heart Rate Monitor</a></h5>
                                             <p class="card-text ">Built AWS infrastructe to handle smartwatch heart rate data and use machine learning to detect heart issues.</p>
                                             <p class="card-text "><small class="text-muted ">CS 498: Internet of Things</small></p>
-                                            <div class="icon-list">
-                                                <i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i>
-                                                <img src="assets/images/raspberry-pi.svg" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
-                                                <img src="assets/images/arduino.svg" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
-                                                <img src="assets/images/aws.png" alt="c++" class="svg-inline--fa fa-java fa-w-20 mr-1">
-                                                <img src="assets/images/awsml.png" alt="c++" class="svg-inline--fa fa-java fa-w-20 mr-1">
+                                            <div class="icon-list ">
+                                                <i class="fab fa-python mr-2 " style="color: rgb(217, 221, 14) "></i>
+                                                <img src="assets/images/raspberry-pi.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
+                                                <img src="assets/images/arduino.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
+                                                <img src="assets/images/aws.png " alt="c++ " class="svg-inline--fa fa-java fa-w-20 mr-1 ">
+                                                <img src="assets/images/awsml.png " alt="c++ " class="svg-inline--fa fa-java fa-w-20 mr-1 ">
                                             </div>
                                             <p class="card-text ">2019</p>
                                         </div>
@@ -463,20 +565,20 @@
                             <!--//card-->
                         </div>
                         <!--//col-->
-                        <div class="isotope-item col-md-6 mb-5 machinelearning">
+                        <div class="isotope-item col-md-6 mb-5 machinelearning ">
                             <div class="card project-card ">
                                 <div class="row no-gutters ">
                                     <div class="col-lg-4 card-img-holder ">
-                                        <img src="assets/images/img2pic.png" alt="image ">
+                                        <img src="assets/images/img2pic.png " alt="image ">
                                     </div>
                                     <div class="col-lg-8 ">
                                         <div class="card-body ">
                                             <h5 class="card-title "><a href="project.html " class="theme-link ">AI Image-to-Text Plug-in</a></h5>
                                             <p class="card-text ">Built a plug in for Ginger Automation software adding the ability to read text from an image using .NET Machine Learning Framework. </p>
                                             <p class="card-text "><small class="text-muted ">Client: Ginger Automation</small></p>
-                                            <div class="icon-list">
-                                                <img src="assets/images/C_Sharp_logo.svg" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
-                                                <img src="assets/images/dotnetml.png" alt="c++" class="svg-inline--fa fa-java fa-w-14 mr-1">
+                                            <div class="icon-list ">
+                                                <img src="assets/images/C_Sharp_logo.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
+                                                <img src="assets/images/dotnetml.png " alt="c++ " class="svg-inline--fa fa-java fa-w-14 mr-1 ">
                                             </div>
                                             <p class="card-text ">2019</p>
                                         </div>
@@ -495,20 +597,20 @@
                             <!--//card-->
                         </div>
                         <!--//col-->
-                        <div class="isotope-item col-md-6 mb-5 webapp">
+                        <div class="isotope-item col-md-6 mb-5 webapp ">
                             <div class="card project-card ">
                                 <div class="row no-gutters ">
                                     <div class="col-lg-4 card-img-holder ">
-                                        <img src="assets/images/GraphicsBalls.PNG" alt="image ">
+                                        <img src="assets/images/GraphicsBalls.PNG " alt="image ">
                                     </div>
                                     <div class="col-lg-8 ">
                                         <div class="card-body ">
-                                            <h5 class="card-title "><a href="projects/Graphical_Physics_Sim/mp4.html" class="theme-link ">Graphics Physics Simulation</a></h5>
+                                            <h5 class="card-title "><a href="projects/Graphical_Physics_Sim/mp4.html " class="theme-link ">Graphics Physics Simulation</a></h5>
                                             <p class="card-text ">Built a WebGL physics simulations of balls bouncing on a platform. </p>
                                             <p class="card-text "><small class="text-muted ">CS 418: Computer Graphics</small></p>
-                                            <div class="icon-list">
-                                                <img src="assets/images/WebGL_Logo.svg" alt="c++" class="svg-inline--fa fa-java fa-w-20 mr-1">
-                                                <i class="fab fa-js-square mr-2" style="color: rgb(221 205 14)"></i>
+                                            <div class="icon-list ">
+                                                <img src="assets/images/WebGL_Logo.svg " alt="c++ " class="svg-inline--fa fa-java fa-w-20 mr-1 ">
+                                                <i class="fab fa-js-square mr-2 " style="color: rgb(221 205 14) "></i>
                                             </div>
                                             <p class="card-text ">2019</p>
                                         </div>
@@ -516,7 +618,7 @@
                                 </div>
                                 <div class="link-mask ">
                                     <div class="link-mask-text ">
-                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#GraphicBallsModal">
+                                        <button class="btn btn-secondary " data-toggle="modal " data-target="#GraphicBallsModal ">
                                             <i class="fas fa-eye mr-2 "></i>View Project
                                         </button>
                                     </div>
@@ -525,34 +627,34 @@
                             </div>
                             <!--//card-->
                             <!-- The Modal -->
-                            <div class="modal fade" id="GraphicBallsModal">
-                                <div class="modal-dialog modal-dialog-centered modal-lg">
-                                    <div class="modal-content">
-                                        <div class="modal-img-holder">
-                                            <img src="assets/images/GraphicsBalls.PNG" alt="image">
+                            <div class="modal fade " id="GraphicBallsModal ">
+                                <div class="modal-dialog modal-dialog-centered modal-lg ">
+                                    <div class="modal-content ">
+                                        <div class="modal-img-holder ">
+                                            <img src="assets/images/GraphicsBalls.PNG " alt="image ">
                                         </div>
                                         <!-- Modal Header -->
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Graphics Physics Simulation</h4>
+                                        <div class="modal-header ">
+                                            <h4 class="modal-title ">Graphics Physics Simulation</h4>
                                         </div>
 
                                         <!-- Modal body -->
-                                        <div class="modal-body">
+                                        <div class="modal-body ">
                                             <h5>Built a WebGL physics simulations of balls bouncing on a platform.</h5>
                                             <p>CS 418: Computer Graphics</p>
                                             <p><strong>Tech Used:</strong></p>
                                             <ul>
-                                                <li><img src="assets/images/WebGL_Logo.svg" alt="c#" class="svg-inline--fa fa-java fa-w-16 mr-1"> WebGL</li>
-                                                <li><i class="fab fa-js-square mr-2" style="color: rgb(221 205 14)"></i> JavaScript</li>
-                                                <div class="icon-list">
+                                                <li><img src="assets/images/WebGL_Logo.svg " alt="c# " class="svg-inline--fa fa-java fa-w-16 mr-1 "> WebGL</li>
+                                                <li><i class="fab fa-js-square mr-2 " style="color: rgb(221 205 14) "></i> JavaScript</li>
+                                                <div class="icon-list ">
                                                 </div>
                                             </ul>
-                                            <p><strong>Project Page:</strong> <a href="projects/Graphical_Physics_Sim/mp4.html" target="_blank">Graphics Physics Simulation</a></p>
+                                            <p><strong>Project Page:</strong> <a href="projects/Graphical_Physics_Sim/mp4.html " target="_blank ">Graphics Physics Simulation</a></p>
                                         </div>
 
                                         <!-- Modal footer -->
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <div class="modal-footer ">
+                                            <button type="button " class="btn btn-secondary " data-dismiss="modal ">Close</button>
                                         </div>
                                     </div>
                                 </div>
@@ -569,7 +671,7 @@
     </div>
 
     <!-- Javascript -->
-    <script src="script.js"></script>
+    <script src="script.js "></script>
 
     <!-- Javascript -->
     <script src="assets/plugins/jquery-3.4.1.min.js "></script>
@@ -583,24 +685,24 @@
     <script type="text/javascript " src="assets/js/isotope-custom.js "></script>
 
     <!-- The Modal -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+    <div class="modal fade " id="myModal ">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content ">
 
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-header ">
+                    <h4 class="modal-title ">Modal Heading</h4>
+                    <button type="button " class="close " data-dismiss="modal ">&times;</button>
                 </div>
 
                 <!-- Modal body -->
-                <div class="modal-body">
+                <div class="modal-body ">
                     Modal body..
                 </div>
 
                 <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div class="modal-footer ">
+                    <button type="button " class="btn btn-secondary " data-dismiss="modal ">Close</button>
                 </div>
 
             </div>
