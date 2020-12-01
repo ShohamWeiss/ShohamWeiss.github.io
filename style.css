@@ -264,6 +264,10 @@
         flex-shrink: 0;
         width: 100%;
     }
+    .modal .modal-img-holder img {
+        position: relative !important;
+        top: -25% !important;
+    }
 }
 
 
