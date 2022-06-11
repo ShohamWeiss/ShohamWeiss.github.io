@@ -43,7 +43,7 @@ function disengage() {
 // get the new position given a mouse / touch event
 function setPosition(e) {
 
-  if (!isTouchDevice()) {
+  if (isTouchDevice()) {
   	var touch = e.touches[0];
   	pos.x = touch.clientX - ctx.canvas.offsetLeft;
   	pos.y = touch.clientY - ctx.canvas.offsetTop;
