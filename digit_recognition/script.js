@@ -28,9 +28,7 @@ function isTouchDevice() {
   );
 }
 
-
 // define basic functions to detect click / release
-
 function engage() {
   dragging = true;
 };
@@ -43,6 +41,7 @@ function disengage() {
 // get the new position given a mouse / touch event
 function setPosition(e) {
 
+  console.log(isTouchDevice())
   if (isTouchDevice()) {
   	var touch = e.touches[0];
   	pos.x = touch.clientX - ctx.canvas.offsetLeft;

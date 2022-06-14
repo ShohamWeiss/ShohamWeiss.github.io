@@ -11,13 +11,13 @@ $(document).ready(function() {
             layoutMode: 'fitRows',
         });
     });
-
+    
     // filter items on click
     $('#filters').on('click', '.type', function() {
         var filterValue = $(this).attr('data-filter');
         $container.isotope({ filter: filterValue });
     });
-
+    
     // change is-checked class on buttons
     $('.filters').each(function(i, typeGroup) {
         var $typeGroup = $(typeGroup);
