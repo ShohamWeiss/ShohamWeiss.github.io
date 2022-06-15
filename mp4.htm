@@ -90,13 +90,20 @@
    }
 </script>
 
-
-<script src="gl-matrix-min.js"></script>
-<script src="webgl-utils.js"></script>
-<script src="simpleModeling.js"></script>
-<script src="MP4.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="assets/fontawesome/js/all.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="projects/Graphical_Physics_Sim/gl-matrix-min.js"></script>
+<script src="projects/Graphical_Physics_Sim/webgl-utils.js"></script>
+<script src="projects/Graphical_Physics_Sim/simpleModeling.js"></script>
+<script src="projects/Graphical_Physics_Sim/MP4.js"></script>
 <body onload="startup();">
 <div class="left" style="width: 60vw;margin-left: auto;margin-right: auto;">
+  <div id="navigation"></div>
+  <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">Back to portfolio</a>
+  <h2>Particle system using WebGL.</h2>
+  <h5> Particle systems are typically used to model fine-grained physical effects like fire, smoke, and water. This is something simpler and just renders a system of bouncing spheres in 3D.</h5>
   <p style="font-size:30px;margin-left:10vw;font-weight:bold;">Move the invisible floor with ArrowUp and ArrowDown</p>
   <canvas id="myGLCanvas" width="1200" height="700"></canvas>
   </body>
@@ -109,3 +116,13 @@
     <p>Note: small balls were made bouncier, but all balls have the same acceleration due to gravity.</p>
 </div>
 </html>
+<script>
+  $(document).ready(function() {
+      // add navigation htm
+      $(function(){
+          $("#navigation").load("navigation.htm", function() {
+              jQuery('#PortfolioNav').addClass('active');
+          }); 
+      });
+  });
+</script>
