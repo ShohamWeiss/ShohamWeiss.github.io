@@ -103,8 +103,13 @@ function erase() {
 }
 
 function confirm() {
-  var image = canvas.toDataURL("image/png");
-  document.getElementById("image").src = image;
+  canvas = document.getElementById("canvas");
+  var dataURL = canvas.toDataURL("image/png");
+  var image = new Image();
+  image.src = dataURL;
+  var before = document.getElementById("image");
+  var ctx = before.getContext("2d");
+  ctx.drawImage(image, 0, 0, 500, 500);
 }
 
 // defines a TF model load function
@@ -161,10 +166,22 @@ function uploadImage(){
   var reader = new FileReader();
   reader.onload = function(e) {
     var dataURL = reader.result;
-    var image = document.getElementById("image");
+    // resize image width to 500
+    var image = new Image();
     image.src = dataURL;
+    image.onload = function() {
+      var canvas = document.getElementById("image");
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(image, 0, 0, 500, 500);
+    }
+    // var image = document.getElementById("image");
+    // image.src = dataURL;
   }
   reader.readAsDataURL(file);
+}
+
+function toggleDraw(){
+  document.getElementById("drawing").hidden=!document.getElementById("drawing").hidden;
 }
 
 $('#mySpinner').addClass('spinner');

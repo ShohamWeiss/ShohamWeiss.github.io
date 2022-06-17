@@ -54,48 +54,52 @@
                      <div class="row">
                         <h3 id="loading" class="col-lg-12"> <div id="mySpinner"></div> Loading model...</h3>
                     </div>
-                    <h3>Step 1: Upload a file / Draw</h3>
+                    <h3>Step 1: Upload a file</h3>                    
                     <!-- upload image -->
                     <div class="col-lg-12 text-center">
                         <input type="file" name="file" id="file" class="btn btn-secondary" accept="image/*">
                         <input type="submit" value="Upload" onclick="uploadImage()" name="submit" class="btn btn-primary">
                     </div>
-                    <!-- canvas to draw on -->
+                    <h3>Or Draw</h3>
                     <div class="col-lg-12 text-center">
-                        <canvas id="canvas" style="border: 1px solid black;" width="500" height="500"></canvas>
-                        <!-- spinning loader -->
+                        <input type="submit" value="Toggle Drawing Interface" onclick="toggleDraw()" name="submit" class="btn btn-primary">
                     </div>
-                    <!-- button for cleating the canvas -->
-                    <div class="col-lg-12 text-center">
-                        <button onclick="erase()" id="clear" class="btn btn-secondary">Clear</button>
-                        <button onclick="confirm()" id="confirm" class="btn btn-primary">Finish Drawing</button>
-                        <!-- slider to control stroke width -->
-                        <div class="slider-container">
-                            <input type="range" min="1" max="100" value="10" class="slider" id="slider">
+                    <!-- canvas to draw on -->
+                    <div class="col m-2" id="drawing" hidden="true">
+                        <!-- button for cleaning the canvas -->
+                        <div class="row">
+                            <div class="col-lg-12 text-center">                         
+                                <input type="range" min="1" max="100" value="10" class="slider" id="slider">
+                                <input type="color" id="color" value="#000000">
+                                <button onclick="erase()" id="clear" class="btn btn-secondary">Clear</button>
+                                <button onclick="confirm()" id="confirm" class="btn btn-primary">Finish Drawing</button>
+                            </div>
                         </div>
-                        <!-- color picker -->
-                        <div class="color-picker-container">
-                            <input type="color" id="color" value="#000000">
+                        <div class="row">
+                            <div class="col-lg-12 text-center"> 
+                        <canvas id="canvas" style="border: 1px solid black;" width="500" height="500"></canvas>
+                            </div>
                         </div>
                     </div>
                     <h3>Step 2: Let the Deep Learning Model Color it for you!</h3>
                     <!-- show 2 images next to eachother -->
+                    <div class="col-lg text-center">
+                        <button onclick="predictModel()" id="predict" class="btn btn-primary">Predict</button> 
+                    </div>
                     <div class="row">
-                        <img class="col-lg" id="image" src="" alt="before" width="500" height="500">
-                        <canvas class="col-lg" style="border: 1px solid black;" id="predicted" src="" alt="predicted" width="500" height="500"></canvas>
-                        <!-- button to tell the model to predict -->
-                        <div class="col-lg-12 text-center">
-                            <button onclick="predictModel()" id="predict" class="btn btn-primary">Predict</button> 
-                        </div>
+                            <div class="col-lg-6">
+                                <canvas style="border: 1px solid black;" id="image" src="" alt="before" width="500" height="500"></canvas>
+                            </div>
+                            <div class="col-lg-6">
+                                <canvas style="border: 1px solid black;" id="predicted" src="" alt="predicted" width="500" height="500"></canvas>
+                            </div>
                     </div>
                     <div class="row">
                         <p id="tensor"></p>
-                    </div>
-                    
-                    <h2>More info</h2>
-                    <iframe id="myFrame" class="w-100" height="1200" allowfullscreen="true" frameBorder="0" src="image_colorization/ProjectReport.html"></iframe>
+                    </div>                
                 </div>
             </div>
+            <iframe id="myFrame" class="w-100" height="1200" allowfullscreen="true" frameBorder="0" src="image_colorization/ProjectReport.html"></iframe>
         </div>
     </section>
 </div>
