@@ -5,12 +5,14 @@ $(document).ready(function() {
     // init Isotope    
     var $container = $('.isotope');
 
-    $container.imagesLoaded(function() {
-        $('.isotope').isotope({
-            itemSelector: '.isotope-item',
-            layoutMode: 'fitRows',
+    if ($container != null) {
+        $container.imagesLoaded(function() {
+            $('.isotope').isotope({
+                itemSelector: '.isotope-item',
+                layoutMode: 'fitRows',
+            });
         });
-    });
+    }
     
     // filter items on click
     $('#filters').on('click', '.type', function() {

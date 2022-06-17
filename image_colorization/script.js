@@ -1,6 +1,6 @@
-// define relevant variables
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext('2d');
+
 var dragging = false;
 var pos = { x: 0, y: 0 };
 
@@ -13,7 +13,7 @@ canvas.addEventListener('mousedown',  setPosition);
 canvas.addEventListener('mousemove',  draw);
 canvas.addEventListener('mouseup', disengage);
 
-// touch
+// touch_
 canvas.addEventListener('touchstart', engage);
 canvas.addEventListener('touchmove', setPosition);
 canvas.addEventListener('touchmove', draw);
@@ -22,15 +22,15 @@ canvas.addEventListener('touchend', disengage);
 // detect if it is a touch device
 function isTouchDevice() {
   return (
-    ('ontouchstart' in window) ||
+    false &&
+    (('ontouchstart' in window) ||
     (navigator.maxTouchPoints > 0) ||
-    (navigator.msMaxTouchPoints > 0)
+    (navigator.msMaxTouchPoints > 0))
   );
 }
 
 
 // define basic functions to detect click / release
-
 function engage() {
   dragging = true;
 };
@@ -43,17 +43,24 @@ function disengage() {
 // get the new position given a mouse / touch event
 function setPosition(e) {
 
-  if (!isTouchDevice()) {
+  console.log(isTouchDevice())
+  if (isTouchDevice()) {
   	var touch = e.touches[0];
-  	pos.x = touch.clientX - ctx.canvas.offsetLeft;
-  	pos.y = touch.clientY - ctx.canvas.offsetTop;
+  	pos.x = touch.clientX - getOffset(ctx.canvas).left;
+  	pos.y = touch.clientY - getOffset(ctx.canvas).top;
   } else {
-  
-	  pos.x = e.clientX - ctx.canvas.offsetLeft;
-  	pos.y = e.clientY - ctx.canvas.offsetTop;
+	  pos.x = e.clientX - getOffset(ctx.canvas).left;
+  	pos.y = e.clientY - getOffset(ctx.canvas).top;
   }
 }
 
+function getOffset(el) {
+  const rect = el.getBoundingClientRect();
+  return {
+    left: rect.left,
+    top: rect.top
+  };
+}
 
 // draws a line in a canvas if mouse is pressed
 function draw(e) {
@@ -68,10 +75,16 @@ function draw(e) {
     ctx.beginPath();
   
     // attributes of the line
-    ctx.lineWidth = 40;
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = 'red';
 
+    // get line width from slider
+    var lineWidth = document.getElementById("slider").value;
+    ctx.lineWidth = lineWidth;
+
+    // get line color from color picker
+    var lineColor = document.getElementById("color").value;
+    ctx.strokeStyle = lineColor;
+    
+    ctx.lineCap = 'round';
     // get current position, move to new position, create line from current to new
     ctx.moveTo(pos.x, pos.y);
     setPosition(e);
@@ -82,22 +95,38 @@ function draw(e) {
   }
 }
 
-
 // clear canvas
 function erase() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // fill canvas with white rectable
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+function confirm() {
+  var image = canvas.toDataURL("image/png");
+  document.getElementById("image").src = image;
+}
 
 // defines a TF model load function
 async function loadModel(){	
   	
   // loads the model
-  model = await tf.loadLayersModel('https://raw.githubusercontent.com/ShohamWeiss/shohamweiss.github.io/master/model.json');
+  model = await tf.loadLayersModel('image_colorization/model/model.json');
+  // model = await tf.loadGraphModel('image_colorization/model/model.json');
   
   // warm start the model. speeds up the first inference
-  model.predict(tf.zeros([1, 28, 28, 1]))
-  
+  // var inp = tf.randomUniform([1, 256, 256, 3], -1.0,1.0);
+  var inp = tf.zeros([1, 256, 256, 3]);
+  var inp = tf.cast(inp, dtype = 'float32');
+  // print weights
+  // for (let i = 0; i < model.getWeights().length; i++) {
+  //   console.log(model.getWeights()[i].dataSync());
+  // }
+  var y = await model.apply(inp, {training: true});
+
+  // tf.browser.toPixels(tf.image.resizeBilinear(tf.squeeze(y),[500,500]).add(1).div(2).mul(255).cast('int32'),canvas);
+  $('#mySpinner').removeClass('spinner');
+  $('#loading').hide();
   // return model
   return model
 }
@@ -105,28 +134,40 @@ async function loadModel(){
 
 // gets an image tensor from a canvas
 function getData(){
-  return ctx.getImageData(0, 0, canvas.width, canvas.height);
+  image = document.getElementById("image");
+  tensor = tf.browser.fromPixels(image, numChannels = 3);
+  return tensor;
 }
-
 
 // defines the model inference functino
 async function predictModel(){
     
-  // gets image data
+  // // gets image data
   imageData = getData();
-  
-  // converts from a canvas data object to a tensor
-  image = tf.browser.fromPixels(imageData)
-  
   // pre-process image
-  image = tf.image.resizeBilinear(image, [28,28]).sum(2).expandDims(0).expandDims(-1)
+  imageData = tf.image.resizeBilinear(imageData, [256,256]).expandDims(0).div(tf.scalar(255));
+  imageData = tf.cast(imageData, dtype = 'float32');
   
+  predicted = document.getElementById("predicted");
+
   // gets model prediction
-  y = model.predict(image);
-  
-  // replaces the text in the result tag by the model prediction
-  document.getElementById('result').innerHTML = "Prediction: " + y.argMax(1).dataSync();
+  var y = await model.apply(imageData, {training: true});
+  tf.browser.toPixels(tf.image.resizeBilinear(tf.squeeze(y),[500,500]).add(1).div(2).mul(255).cast('int32'),predicted);
 }
 
+// upload image and save and display on image
+function uploadImage(){
+  var file = document.getElementById("file").files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var dataURL = reader.result;
+    var image = document.getElementById("image");
+    image.src = dataURL;
+  }
+  reader.readAsDataURL(file);
+}
+
+$('#mySpinner').addClass('spinner');
 // loads the model
-var model = loadModel()
+var model = loadModel();
+erase();
