@@ -1,0 +1,216 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../">
+    <!-- Imports TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.7.0"> </script>
+
+    <!-- Imports tfjs-vis -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.5.1/dist/tfjs-vis.umd.min.js"></script>
+
+    <!-- bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    
+    <!-- bootrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- <script defer src="assets/fontawesome/js/all.js"></script> -->
+    <script defer src="assets/fontawesome-free-6.1.1-web/js/all.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Shoham Weiss Peronal Website</title>
+    <link rel="shortcut icon" href="assets/images/user-tie-solid.svg">
+</head>
+
+<body style="display:none;">
+    <div id="navigation"></div>
+    <div class="main-wrapper">
+        <section class="p-3 p-lg-2 theme-bg-light">
+            <div class="container">
+                <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">Back to portfolio</a>
+            </div>
+        </section>
+        <section class="p-3 p-lg-5 theme-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">Image Colorization</h1>
+                        <p class="text-center">
+                            This is a project I undertook during my time at the University of North Texas. A model that
+                            colorizes images
+                            based on pretrained anime styles.
+                        </p>
+                        <p><strong>Colab Notebook:</strong>
+                            <a target="_blank" href="https://colab.research.google.com/drive/1f04wKwC02cIzDitA9UymF8bPws-nQWeX?usp=sharing">Anime_Colorization_Dragon_Ball</a></p>
+                        <hr>
+                        <h2><i class="fa-solid fa-fingerprint" style="color: gold;"></i> Try it yourself</h2>
+                        <!-- text saying loading model -->
+                        <hr>
+                        <div class="row">
+                            <button id="spinner" class="btn btn-secondary" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                <span class="">Loading colorization model...</span>
+                            </button>
+                        </div>
+                        <h3>Step 1: Choose a Drawing</h3>
+                        <!-- tabs to choose between images, drawing, or upoading image -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                            data-bs-target="#images" type="button" role="tab" aria-controls="home"
+                                            aria-selected="true">Examples</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#draw" type="button" role="tab" aria-controls="profile"
+                                            aria-selected="false">Draw</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#upload" type="button" role="tab" aria-controls="contact"
+                                            aria-selected="false">Upload</button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <!-- choose image -->
+                                    <div id="images" class="tab-pane fade show active">
+                                        <!-- 4 selectable images -->
+                                        <div class="col-lg-12 text-center">
+                                            <h4>Select an Image</h4>
+                                        </div>
+                                        <div class="row m-2">
+                                            <div class="col-lg-3">
+                                                <button class="mb-2" onclick="selectImage('pikatchu')">
+                                                <img id="pikatchu" src="assets/images/pikatchu.jpg" class="img-fluid" alt="">
+                                                </button>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <button class="mb-2" onclick="selectImage('youngu')">
+                                                    <img id="youngu" src="assets/images/youngu.jpg" class="img-fluid" alt="">
+                                                </button>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <button class="mb-2" onclick="selectImage('spiderman')">
+                                                <img id="spiderman" src="assets/images/spiderman.png" class="img-fluid" alt="">
+                                                </button>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <button class="mb-2" onclick="selectImage('groot2')">
+                                                <img id="groot2" src="assets/images/groot2.jpg" class="img-fluid" alt="">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- upload image -->
+                                    <div id="upload" class="tab-pane fade">
+                                        <div class="col-lg-12 text-center m-2" id="drawing">
+                                            <input type="file" name="file" id="file" class="btn btn-secondary"
+                                                accept="image/*">
+                                            <input type="submit" value="Upload" onclick="uploadImage()"
+                                                name="submit" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                    <!-- draw -->
+                                    <div id="draw" class="tab-pane fade">
+                                        <!-- canvas to draw on -->
+                                        <div class="col m-2" id="drawing">
+                                            <!-- button for cleaning the canvas -->
+                                            <div class="row">
+                                                <div class="col-lg-12 text-center">
+                                                    <input type="range" min="1" max="100" value="10" class="slider mb-2"
+                                                        id="slider">
+                                                    <!-- <input type="color" id="color" value="#000000"> -->
+                                                    <button onclick="erase()" id="clear"
+                                                        class="btn btn-secondary  mb-2">Clear</button>
+                                                    <button onclick="confirm()" id="confirm"
+                                                        class="btn btn-primary mb-2">Finish
+                                                        Drawing</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 text-center">
+                                                    <canvas id="canvas" style="border: 1px solid black;" width="500"
+                                                        height="500"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Step 2: Let the Deep Learning Model Color it for you!</h3>
+                        <!-- show 2 images next to eachother -->
+                        <div class="col-lg m-2">
+                            <button onclick="predictModel()" id="predict" class="btn btn-primary mb-2">Predict</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <canvas style="border: 1px solid black;" id="image" src="" alt="before" width="500"
+                                height="500"></canvas>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <canvas style="border: 1px solid black;" id="predicted" src="" alt="predicted"
+                                width="500" height="500"></canvas>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p id="tensor"></p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="report">
+                    <base href="images/">
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        // add navigation htm
+        $(function () {
+            $("#navigation").load("navigation.htm", function () {
+                jQuery('#PortfolioNav').addClass('active');
+            });
+        });
+    });
+    $(document).ready(function () {
+        // add navigation htm
+        $(function () {
+            $("#report").load("projects/image_colorization/ProjectReport.htm", function () {
+                // load images folder
+                $("#report").contents().find("img").each(function () {
+                    $(this).attr("src", "projects/image_colorization/" + $(this).attr("src"));
+                });
+            });
+        });
+    });
+    $(document).ready(function () {
+        var pathname = window.location.href.split('#')[0];
+        $('a[href^="#"]').each(function () {
+            var $this = $(this),
+                link = $this.attr('href');
+            $this.attr('href', pathname + link);
+        });
+    });
+</script>
+<script src="projects/image_colorization/script.js"></script>
+
+<style>
+    /* table with centered contents */
+    table {
+        margin: 0 auto !important;
+    }
+</style>
