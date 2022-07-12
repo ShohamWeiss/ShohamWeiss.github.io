@@ -102,14 +102,9 @@ function erase() {
 
 function confirm() {
   canvas = document.getElementById("canvas");
-  var dataURL = canvas.toDataURL("image/png");
-  var image = new Image();
-  image.src = dataURL;
   var before = document.getElementById("image");
   var ctx = before.getContext("2d");
-  // clear canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+  ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height);
 }
 
 // defines a TF model load function
