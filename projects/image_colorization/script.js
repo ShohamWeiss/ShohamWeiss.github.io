@@ -23,7 +23,6 @@ canvas.addEventListener('touchend', disengage);
 // detect if it is a touch device
 function isTouchDevice() {
   return (
-    false &&
     (('ontouchstart' in window) ||
     (navigator.maxTouchPoints > 0) ||
     (navigator.msMaxTouchPoints > 0))
@@ -43,9 +42,7 @@ function disengage() {
 
 // get the new position given a mouse / touch event
 function setPosition(e) {
-
-  console.log(isTouchDevice())
-  if (isTouchDevice()) {
+  if (e.touches !== undefined) {
   	var touch = e.touches[0];
   	pos.x = touch.clientX - getOffset(ctx.canvas).left;
   	pos.y = touch.clientY - getOffset(ctx.canvas).top;
@@ -128,7 +125,7 @@ async function loadModel(){
   // for (let i = 0; i < model.getWeights().length; i++) {
   //   console.log(model.getWeights()[i].dataSync());
   // }
-  var y = await model.apply(inp, {training: true});
+  var y = model.apply(inp, {training: true});
 
   // tf.browser.toPixels(tf.image.resizeBilinear(tf.squeeze(y),[500,500]).add(1).div(2).mul(255).cast('int32'),canvas);
   $('*[id*=spinner]').hide();
@@ -172,7 +169,7 @@ function uploadImage(){
     image.onload = function() {
       var canvas = document.getElementById("image");
       var ctx = canvas.getContext("2d");
-      ctx.drawImage(image, 0, 0, 500, 500);
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     }
     // var image = document.getElementById("image");
     // image.src = dataURL;
@@ -182,11 +179,23 @@ function uploadImage(){
 
 // function for selecting image from options
 function selectImage(img_id){
-  // alert(img_id);
   selected = document.getElementById(img_id);
   var before = document.getElementById("image");
   var ctx = before.getContext("2d");
-  ctx.drawImage(selected, 0, 0, 500, 500);
+  ctx.drawImage(selected, 0, 0, before.width, before.height);
+  // get parent of selected image
+  var parent = selected.parentElement;
+  // make border blue
+  parent.style.border = "2px solid blue";
+  // get all brother elements
+  var brothers = parent.parentElement.parentElement.children;
+  // make all border black
+  for (var i = 0; i < brothers.length; i++) {
+    // except the selected image
+    if (brothers[i].children[0].children[0].id != img_id) {
+      brothers[i].children[0].style.border = "2px solid black";
+    }
+  }  
 }
 
 // loads the model

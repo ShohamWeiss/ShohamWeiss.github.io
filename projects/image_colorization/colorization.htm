@@ -205,6 +205,16 @@
             $this.attr('href', pathname + link);
         });
     });
+    $(document).ready(function () {
+        // if on mobile
+        if (window.innerWidth < 768) {
+            // set canvas size to window size
+            $(function () {
+                $("canvas").attr("width", $(window).width() * 0.8);
+                $("canvas").attr("height", $(window).width() * 0.8);
+            });
+        }
+    });
 </script>
 <script src="projects/image_colorization/script.js"></script>
 
