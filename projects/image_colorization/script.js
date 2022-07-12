@@ -151,7 +151,7 @@ async function predictModel(){
 
   // gets model prediction
   var y = await model.apply(imageData, {training: true});
-  tf.browser.toPixels(tf.image.resizeBilinear(tf.squeeze(y),[500,500]).add(1).div(2).mul(255).cast('int32'),predicted);
+  tf.browser.toPixels(tf.image.resizeBilinear(tf.squeeze(y),[predicted.width,predicted.height]).add(1).div(2).mul(255).cast('int32'),predicted);
 }
 
 // upload image and save and display on image
