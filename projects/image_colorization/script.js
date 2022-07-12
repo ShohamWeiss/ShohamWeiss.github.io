@@ -107,7 +107,9 @@ function confirm() {
   image.src = dataURL;
   var before = document.getElementById("image");
   var ctx = before.getContext("2d");
-  ctx.drawImage(image, 0, 0, 500, 500);
+  // clear canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 }
 
 // defines a TF model load function
