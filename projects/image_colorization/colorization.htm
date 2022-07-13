@@ -25,16 +25,16 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 
-    <title>Shoham Weiss Peronal Website</title>
+    <title>Shoham Weiss Project</title>
     <link rel="shortcut icon" href="assets/images/user-tie-solid.svg">
 </head>
 
 <body style="display:none;">
-    <div id="navigation"></div>
+    <div id="navigation_bar"></div>
     <div class="main-wrapper">
         <section class="p-3 p-lg-2 theme-bg-light">
             <div class="container">
-                <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">Back to portfolio</a>
+                <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">To portfolio</a>
             </div>
         </section>
         <section class="p-3 p-lg-5 theme-bg">
@@ -182,7 +182,7 @@
     $(document).ready(function () {
         // add navigation htm
         $(function () {
-            $("#navigation").load("navigation.htm", function () {
+            $("#navigation_bar").load("navigation.htm", function () {
                 jQuery('#PortfolioNav').addClass('active');
             });
         });

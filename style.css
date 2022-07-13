@@ -241,9 +241,9 @@
     }
     .header .blog-name {
         width: 100%;
-        position: absolute;
+        /* position: absolute; */
         left: 0;
-        top: 1.2rem;
+        /* top: 1.2rem; */
     }
     .header .navbar {
         padding: 1rem;

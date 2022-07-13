@@ -1,11 +1,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!-- bootrap.css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="assets/fontawesome-free-6.1.1-web/js/all.js"></script>
+    
     <!-- bootstap.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -16,7 +18,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    <!-- jQuery -->
+    
+        <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
     <!-- imageload/ isotope -->
@@ -30,7 +33,7 @@
 </head>
 
 <body style="display:none;">
-    <div id="navigation"></div>
+    <div id="navigation_bar"></div>
     <div class="main-wrapper">
         <!--//about-me-section-->
         <section class="p-3 p-lg-5 theme-bg-light">
@@ -244,327 +247,23 @@
             <div class="container">
                 <h2 class="section-title font-weight-bold mb-5">Featured Projects</h2>
                 <div class="row">
-                    <!--//card Hand Gesture-->
+                    <!-- card Image Colorization -->
                     <div class="col-md-6 mb-5">
-                        <div class="card project-card">
-                            <div class="row no-gutters">
-                                <div class="col-lg-4 card-img-holder">
-                                    <img src="assets/images/nn.png" alt="card-img">
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            Hand Gesture Machine Vision
-                                        </h5>
-                                        <p class="card-text">A Deep Neural Network Model that can recognize which
-                                            direction a hand is pointing based on a picture. A raspberry pi runs the
-                                            model and points a lazer in the same direction</p>
-                                        <div class="icon-list">
-                                            <i class="fab fa-python mr-1" style="color: rgb(217, 221, 14)"></i>
-                                            <img src="assets/images/Tensorflow_logo.svg" alt="c++"
-                                                class="svg-inline--fa fa-java fa-w-20 mr-1">
-                                            <img src="assets/images/raspberry-pi.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-20 mr-1">
-                                        </div>
-                                        <p class="card-text">Currently Working on this project</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="link-mask">
-                                <div class="link-mask-text ">
-                                    <button class="btn btn-secondary" data-toggle="modal"
-                                        data-target="#HandGestureModal">
-                                        <i class="fas fa-eye mr-2 "></i>View Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="card project-card" id="image-colorization">
+                        </div> 
                     </div>
-                    <!-- The Modal -->
-                    <div class="modal fade" id="HandGestureModal">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-img-holder">
-                                    <img src="assets/images/nn.png" alt="image">
-                                </div>
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Hand Gesture Computer Vision</h4>
-                                </div>
-
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <h5>A Deep Neural Network Model that can recognize which direction a hand is
-                                        pointing based on a picture. A raspberry pi runs the model and points a lazer in
-                                        the same direction</h5>
-                                    <p>Self-driven project</p>
-                                    <p><strong>Tech Used:</strong></p>
-                                    <ul>
-                                        <li><i class="fab fa-python mr-1" style="color: rgb(217, 221, 14)"></i> Python
-                                        </li>
-                                        <li><img src="assets/images/Tensorflow_logo.svg" alt="c++"
-                                                class="svg-inline--fa fa-java fa-w-20 mr-1"> TensorFlow</li>
-                                        <li><img src="assets/images/raspberry-pi.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-20 mr-1"> Raspberry-pi</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//card Rpi-->
                     <div class="col-md-6 mb-5">
-                        <div class="card project-card">
-                            <div class="row no-gutters">
-                                <div class="col-lg-4 card-img-holder">
-                                    <img src="assets/images/rpidoorlock.png" alt="card-img">
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            Raspberry Pi Doorlock
-                                        </h5>
-                                        <p class="card-text">Bolt lock attachment that you can control with your phone.
-                                            3D print and design to fit and rotate bolt lock. Raspberry pi runs a local
-                                            server and controls a servo motor. Slick website interface for controlling
-                                            the
-                                            doorlock
-                                        </p>
-                                        <div class="icon-list">
-                                            <i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i>
-                                            <img src="assets/images/raspberry-pi.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-14">
-                                            <img src="assets/images/Apache_Feather_Logo.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-20">
-                                            <img src="assets/images/mariadb.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-20 mr-2">
-                                            <i class="fab fa-js-square mr-2" style="color: rgb(221 205 14)"></i>
-                                            <i class="fab fa-htm5 mr-2" style="color: rgb(221 119 14)"></i>
-                                            <i class="fab fa-css3-alt mr-2" style="color: rgb(14, 45, 221)"></i>
-                                            <i class="fab fa-php mr-2" style="color: rgb(89, 105, 197)"></i>
-                                        </div>
-                                        <p class="card-text">2019</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="link-mask">
-                                <div class="link-mask-text ">
-                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#RpiModal">
-                                        <i class="fas fa-eye mr-2 "></i>View Project
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="card project-card" id="rpi">
                         </div>
                     </div>
-                    <!-- The Modal -->
-                    <div class="modal fade" id="RpiModal">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-img-holder">
-                                    <img src="assets/images/rpidoorlock.png" alt="image">
-                                </div>
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Raspberry Pi Doorlock</h4>
-                                </div>
-
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <h5>Bolt lock attachment that you can control with your phone. 3D print and design
-                                        to fit and rotate bolt lock. Raspberry pi runs a local server and controls a
-                                        servo motor. Slick website interface for controlling the doorlock
-                                    </h5>
-                                    <p><strong>Class:</strong> CS 418</p>
-                                    <p><strong>Tech Used:</strong></p>
-                                    <ul>
-                                        <li><i class="fab fa-python mr-2" style="color: rgb(217, 221, 14)"></i> Python
-                                        </li>
-                                        <li><img src="assets/images/raspberry-pi.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-14"> Raspberry-pi</li>
-                                        <li><img src="assets/images/Apache_Feather_Logo.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-20"> Apache2</li>
-                                        <li><img src="assets/images/mariadb.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-20 mr-2"> MariaDB</li>
-                                        <li><i class="fab fa-js-square mr-2" style="color: rgb(221 205 14)"></i>
-                                            JavaScript</li>
-                                        <li><i class="fab fa-htm5 mr-2" style="color: rgb(221 119 14)"></i> htm5</li>
-                                        <li><i class="fab fa-css3-alt mr-2" style="color: rgb(14, 45, 221)"></i> CSS
-                                        </li>
-                                        <li><i class="fab fa-php mr-2" style="color: rgb(89, 105, 197)"></i> PHO</li>
-                                    </ul>
-                                    <p class="card-text">2019</p>
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
+                    <!-- <div class="col-md-6 mb-5">
+                        <div class="card project-card" id="ballgraphics">
                         </div>
                     </div>
-                    <!--//card-->
                     <div class="col-md-6 mb-5">
-                        <div class="card project-card">
-                            <div class="row no-gutters">
-                                <div class="col-lg-4 card-img-holder">
-                                    <img src="assets/images/code.svg" alt="code">
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            Blazor Web Application
-                                        </h5>
-                                        <p class="card-text">Real Estate property management software. Web application
-                                            for managing company finances, vendors, documnetaion, and more.</p>
-                                        <div class="icon-list">
-                                            <img src="assets/images/C_Sharp_logo.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-16 mr-1">
-                                            <img src="assets/images/blazor.png" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-14 mr-1">
-                                            <img src="assets/images/NET_Core_Logo.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-16 mr-2">
-                                            <i class="fab fa-css3-alt mr-2" style="color: rgb(14, 45, 221)"></i>
-                                            <img src="assets/images/sql-server.ico" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-16 mr-2">
-                                        </div>
-                                        <p class="card-text mb-0">Client: CoralOnyx Real Estate LLC</p>
-                                        <p class="card-text">2020</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="link-mask">
-                                <a class="link-mask-link" href="#"></a>
-                                <div class="link-mask-text ">
-                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#BlazorWebModal">
-                                        <i class="fas fa-eye mr-2 "></i>View Project
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="card project-card" id="handgest">
                         </div>
-                    </div>
-                    <!-- The Modal -->
-                    <div class="modal fade" id="BlazorWebModal">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-img-holder">
-                                    <img src="assets/images/code.svg" alt="image">
-                                </div>
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Blazor Web Application</h4>
-                                </div>
-
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <h5>Real Estate property management software. Web application for managing company
-                                        finances, vendors, documentaion, and more.</h5>
-                                    <ul>
-                                        <li>Engineered a machine learning model for transaction classification, reducing
-                                            time inserting data by 80%</li>
-                                        <li>Designed production quality features for inserting sensitive data in
-                                            C#/Blazor</li>
-                                        <li>Managed the project with Git for version control and Continuous Integration
-                                            Continuous Deployment</li>
-                                    </ul>
-                                    <p><strong>Client:</strong> CoralOnyx Real Estate LLC</p>
-                                    <p><strong>Tech Used:</strong></p>
-                                    <ul>
-                                        <li><img src="assets/images/C_Sharp_logo.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-16 mr-1"> C#</li>
-                                        <li><img src="assets/images/blazor.png" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-14 mr-1"> Blazor</li>
-                                        <li><img src="assets/images/NET_Core_Logo.svg" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-16 mr-2"> .Net Core</li>
-                                        <li><i class="fab fa-css3-alt mr-2" style="color: rgb(14, 45, 221)"></i> CSS
-                                        </li>
-                                        <li><img src="assets/images/sql-server.ico" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-16 mr-2"> SQLServer</li>
-                                        <div class="icon-list">
-                                        </div>
-                                    </ul>
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//card neutrinos-->
-                    <div class="col-md-6 mb-5">
-                        <div class="card project-card">
-                            <div class="row no-gutters">
-                                <div class="col-lg-4 card-img-holder">
-                                    <img src="assets/images/nuclear.png" alt="card-img">
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            Neutrino-less Double Beta Decay Research
-                                        </h5>
-                                        <p class="card-text">Research for the next Enriched Xenon Observatory (nEXO).
-                                            1-tonne experiment searching for a rare nuclear physics phenomenon with
-                                            potential for finding new physics.</p>
-                                        <div class="icon-list">
-                                            <i class="fab fa-python mr-1" style="color: rgb(217, 221, 14)"></i>
-                                            <img src="assets/images/labview-logo.png" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-20 mr-1">
-                                        </div>
-                                        <p class="card-text">2017-2019</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="link-mask">
-                                <a class="link-mask-link" href="#"></a>
-                                <div class="link-mask-text">
-                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#NeutrinoModal">
-                                        <i class="fas fa-eye mr-2 "></i>View Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- The Modal -->
-                    <div class="modal fade" id="NeutrinoModal">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-img-holder">
-                                    <img src="assets/images/nuclear.png" alt="image">
-                                </div>
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Neutrino-less Double Beta Decay Research</h4>
-                                </div>
-
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <h5>Research for the next Enriched Xenon Observatory (nEXO). 1-tonne experiment
-                                        searching for a rare nuclear physics phenomenon with potential for finding new
-                                        physics.
-                                    </h5>
-                                    <p><strong>Nuclear Physics Research</strong></p>
-                                    <p><strong>Tech Used:</strong></p>
-                                    <ul>
-                                        <li><i class="fab fa-python mr-1" style="color: rgb(217, 221, 14)"></i> Python
-                                        </li>
-                                        <li><img src="assets/images/labview-logo.png" alt="c#"
-                                                class="svg-inline--fa fa-java fa-w-20 mr-1"> LabView</li>
-                                    </ul>
-                                    <p class="card-text">2017-2019</p>
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="text-center py-3"><a href="portfolio.htm" class="btn btn-primary"><i
                             class="fas fa-arrow-alt-circle-right mr-2"></i>View Portfolio</a></div>
@@ -576,9 +275,14 @@
     $(document).ready(function () {
         // add navigation htm
         $(function () {
-            $("#navigation").load("navigation.htm", function () {
+            $("#navigation_bar").load("navigation.htm", function () {
                 jQuery('#AboutNav').addClass('active');
             });
+        });
+        // for each card add card from portfolio.htm
+        $('.project-card').each(function () {
+            var card_id = $(this).attr('id');
+            $(this).load('portfolio.htm #' + card_id);
         });
     });
 </script>
