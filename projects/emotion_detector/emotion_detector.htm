@@ -1,0 +1,237 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../">
+    <title>Emotion Detector</title>
+    <!-- Imports TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.7.0"> </script>
+
+    <!-- Imports tfjs-vis -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.5.1/dist/tfjs-vis.umd.min.js"></script>
+
+    <!-- Imports tfjs-npy -->
+    <script src="https://cdn.jsdelivr.net/npm/tfjs-npy@0.0.3/dist/npy.min.js"></script>
+
+    <!-- bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- bootrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- <script defer src="assets/fontawesome/js/all.js"></script> -->
+    <script defer src="assets/fontawesome-free-6.1.1-web/js/all.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Shoham Weiss Project</title>
+    <link rel="shortcut icon" href="assets/images/user-tie-solid.svg">
+</head>
+
+<body style="display:none;">
+    <div id="navigation_bar"></div>
+    <div class="main-wrapper">
+        <section class="p-3 p-lg-2 theme-bg-light">
+            <div class="container">
+                <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">To portfolio</a>
+            </div>
+        </section>
+        <section class="p-3 p-lg-5 theme-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">Voice Emotion Detection</h1>
+                        <p class="text-center">
+                            This is a project I undertook during my time at the University of North Texas. A model that
+                            detects emotion from voice recordings.
+                        </p>
+                        <p><strong>Colab Notebook:</strong>
+                            <!-- <a target="_blank" href="https://colab.research.google.com/drive/1f04wKwC02cIzDitA9UymF8bPws-nQWeX?usp=sharing">Anime_Colorization_Dragon_Ball</a></p> -->
+                            <hr>
+                        <h2><i class="fa-solid fa-fingerprint" style="color: gold;"></i> Try it yourself</h2>
+                        <!-- text saying loading model -->
+                        <hr>
+                        <div class="row">
+                            <button id="spinner" class="btn btn-secondary" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                <span class="">Loading emotion detection model...</span>
+                            </button>
+                        </div>
+                        <h3>Step 1: Choose an Audio</h3>
+                        <!-- tabs to choose between images, drawing, or upoading image -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                            data-bs-target="#examples" type="button" role="tab" aria-controls="home"
+                                            aria-selected="true">Examples</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#upload" type="button" role="tab" aria-controls="contact"
+                                            aria-selected="false">Record & Upload</button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <!-- choose audio -->
+                                    <div id="examples" class="tab-pane fade show active">
+
+                                        <!-- 4 selectable recordings -->
+                                        <div class="row">
+                                            <div class="col-lg-12 text-center mt-2">
+                                                <div class="row">
+                                                    <!-- bootstrap radio button -->
+                                                    <div class="form-check col-lg-3 mb-2">
+                                                        <p>Angry</p>
+                                                        <input class="form-check-input mt-3" type="radio"
+                                                            name="audioOption" value="angry.npy" id="flexRadioDefault1">
+                                                        <audio controls>
+                                                            <source src="assets/audio/angry.wav" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
+                                                    <div class="form-check col-lg-3 mb-2">
+                                                        <p>Calm</p>
+                                                        <input class="form-check-input mt-3" type="radio"
+                                                            name="audioOption" value="calm.npy" id="flexRadioDefault1">
+                                                        <audio controls>
+                                                            <source src="assets/audio/calm.wav" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
+                                                    <div class="form-check col-lg-3 mb-2">
+                                                        <p>Fearful</p>
+                                                        <input class="form-check-input mt-3" type="radio"
+                                                            name="audioOption" value="fear.npy" id="flexRadioDefault1">
+                                                        <audio controls>
+                                                            <source src="assets/audio/fear.wav" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
+                                                    <div class="form-check col-lg-3 mb-2">
+                                                        <p>Happy</p>
+                                                        <input class="form-check-input mt-3" type="radio"
+                                                            name="audioOption" value="happy.npy" id="flexRadioDefault1">
+                                                        <audio controls>
+                                                            <source src="assets/audio/happy.wav" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- button to submit radio choice -->
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <button id="submit" onclick="chooseAudio()" class="btn btn-primary m-2"
+                                                    type="button">Confirm</button>
+                                            </div>
+                                        </div>
+                                        <h5>Note: The model was not trained on any of these examples</h5>
+                                    </div>
+                                    <!-- upload numpy -->
+                                    <div id="upload" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-lg-12 text-center m-2">
+                                                <h3>The model accepts .npy files. You can record yourself and get the
+                                                    .npy files to upload here through my <a
+                                                        href="https://colab.research.google.com/drive/1m1nJrFiAvlRXJQE8yQwfIYPSFPXq1zBb?usp=sharing">record-to-npy-converter</a>
+                                                    Colab Notebook. The notebook will guide you through using it.
+                                                </h3>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 text-center m-2" id="drawing">
+                                                    <input type="file" name="file" id="file" class="btn btn-secondary"
+                                                        accept=".npy">
+                                                    <input type="submit" value="Upload" onclick="uploadNumpy()"
+                                                        name="submit" class="btn btn-primary">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 text-center m-2" id="drawing">                                                                                                        
+                                                    <h3 id="successfullUpload" hidden="true"><i class="fa-solid fa-check-circle" style="color: gold;"></i> Numpy File Uploaded</h3>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h3>Step 2: Let the Deep Learning Predict the Emotion!</h3>
+                            <!-- show 2 images next to eachother -->
+                            <div class="col-lg m-2">
+                                <div class="row m-2">
+                                    <div id="audio-container" class="col-lg-12 text-center">
+                                    </div>
+                                </div>
+                                <button onclick="predictModel()" id="predict"
+                                    class="btn btn-primary mb-2">Predict</button>
+                                    <span class="spinner-border spinner-border-sm" id="predictingSpinner" role="status" aria-hidden="true" hidden="true"></span>
+                                    <p style="text-align: center !important; font-size: 30; font-family:'Courier New', Courier, monospace;
+                                    font-weight:bold; color:blueviolet" id="predicted" hidden="true"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="report">
+                        <base href="images/">
+                    </div>
+                </div>
+        </section>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        // add navigation htm
+        $(function () {
+            $("#navigation_bar").load("navigation.htm", function () {
+                jQuery('#PortfolioNav').addClass('active');
+            });
+        });
+    });
+    $(document).ready(function () {
+        // add navigation htm
+        $(function () {
+            $("#report").load("projects/emotion_detector/ProjectReport.htm", function () {
+                // load images folder
+                $("#report").contents().find("img").each(function () {
+                    $(this).attr("src", "projects/emotion_detector/" + $(this).attr("src"));
+                });
+            });
+        });
+    });
+    $(document).ready(function () {
+        var pathname = window.location.href.split('#')[0];
+        $('a[href^="#"]').each(function () {
+            var $this = $(this),
+                link = $this.attr('href');
+            $this.attr('href', pathname + link);
+        });
+    });
+    $(document).ready(function () {
+        // if on mobile
+        if (window.innerWidth < 768) {
+            // set canvas size to window size
+            $(function () {
+                $("canvas").attr("width", $(window).width() * 0.8);
+                $("canvas").attr("height", $(window).width() * 0.8);
+            });
+        }
+    });
+</script>
+<script src="projects/emotion_detector/emotion_detector.js"></script>
+
+<style>
+    /* table with centered contents */
+    table {
+        margin: 0 auto !important;
+    }
+</style>
