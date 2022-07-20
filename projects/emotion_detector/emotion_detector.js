@@ -1,6 +1,6 @@
 var arrayBuffer;
 
-function uploadNumpy() {
+async function uploadNumpy() {
     var file = document.getElementById("file").files[0];
     // read file
     var reader = new FileReader();
@@ -9,6 +9,11 @@ function uploadNumpy() {
         arrayBuffer = reader.result;        
     }
     // set successfullUpload to visible
+    // sleep for 2 seconds
+    predSpinner = document.getElementById("readySpinner");
+    predSpinner.hidden = false;
+    await sleep(500);
+    predSpinner.hidden = true;
     var successfullUpload = document.getElementById("successfullUpload");
     successfullUpload.hidden = false;
 }
