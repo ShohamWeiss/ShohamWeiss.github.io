@@ -30,12 +30,19 @@ async function chooseAudio() {
     }
     audioCopy.id = "audio";
     audioContainer.appendChild(audioCopy);
+    predSpinner = document.getElementById("readySpinner");
+    predSpinner.hidden = false;
+    // sleep for 2 seconds
+    await sleep(500);
+    predSpinner.hidden = true;
+    var successfullUpload = document.getElementById("successfullUpload");
+    successfullUpload.hidden = false;
 }
 
 // function to load the tf model
 async function loadModel() {
     // loads the model
-  model = await tf.loadLayersModel('projects/emotion_detector/ConvLSTM/model.json');
+  model = await tf.loadLayersModel('projects/emotion_detector/TimeDestConv/model.json');
   
   // warm start the model. speeds up the first inference
   var inp = tf.zeros([1, 33, 240, 60, 1]);
@@ -54,7 +61,6 @@ function sleep(ms) {
 // defines the model inference function
 async function predictModel(){
   predicted = document.getElementById("predicted");
-  predicted.hidden = true;
   predSpinner = document.getElementById("predictingSpinner");
   predSpinner.hidden = false;
   // sleep for 2 seconds
@@ -62,14 +68,16 @@ async function predictModel(){
   predSpinner.hidden = true;
   var prediction = 3;
   var tensor = await parse(arrayBuffer);
-  prediction = await model.predict(tensor);      
-  // alert(prediction);
-  var pred_ind = tf.argMax(prediction);
-  // alert(pred_ind);
-  var labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad'];
-  var pred_label = labels[pred_ind.dataSync()[0]];    
-  predicted.innerHTML = pred_label;
+  prediction = await model.apply(tensor);
+  // predictions to percentage
   predicted.hidden = false;
+  percentages = tf.softmax(prediction);
+  document.getElementById("predictedAngry").style.width = percentages.dataSync()[0]*100+"%";
+  document.getElementById("predictedDisgust").style.width = percentages.dataSync()[1]*100+"%";
+  document.getElementById("predictedFear").style.width = percentages.dataSync()[2]*100+"%";
+  document.getElementById("predictedHappiness").style.width = percentages.dataSync()[3]*100+"%";
+  document.getElementById("predictedNeutral").style.width = percentages.dataSync()[4]*100+"%";
+  document.getElementById("predictedSad").style.width = percentages.dataSync()[5]*100+"%";
   predSpinner.hidden = true;
 }
 

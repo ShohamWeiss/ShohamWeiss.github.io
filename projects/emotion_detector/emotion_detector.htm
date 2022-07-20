@@ -125,6 +125,45 @@
                                                         </audio>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <!-- bootstrap radio button -->
+                                                    <div class="form-check col-lg-3 mb-2">
+                                                        <p>Sad</p>
+                                                        <input class="form-check-input mt-3" type="radio"
+                                                            name="audioOption" value="1002_IOM_SAD_XX.wav_tensor.npy" id="flexRadioDefault1">
+                                                        <audio controls>
+                                                            <source src="assets/audio/1002_IOM_SAD_XX.wav" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
+                                                    <div class="form-check col-lg-3 mb-2">
+                                                        <p>Disgust</p>
+                                                        <input class="form-check-input mt-3" type="radio"
+                                                            name="audioOption" value="calm.npy" id="flexRadioDefault1">
+                                                        <audio controls>
+                                                            <source src="assets/audio/1001_ITS_DIS_XX.wav" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
+                                                    <div class="form-check col-lg-3 mb-2">
+                                                        <p>Fearful</p>
+                                                        <input class="form-check-input mt-3" type="radio"
+                                                            name="audioOption" value="fear.npy" id="flexRadioDefault1">
+                                                        <audio controls>
+                                                            <source src="assets/audio/1002_DFA_FEA_XX.wav" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
+                                                    <div class="form-check col-lg-3 mb-2">
+                                                        <p>Neutral</p>
+                                                        <input class="form-check-input mt-3" type="radio"
+                                                            name="audioOption" value="happy.npy" id="flexRadioDefault1">
+                                                        <audio controls>
+                                                            <source src="assets/audio/1001_ITH_NEU_XX.wav" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- button to submit radio choice -->
@@ -134,7 +173,6 @@
                                                     type="button">Confirm</button>
                                             </div>
                                         </div>
-                                        <h5>Note: The model was not trained on any of these examples</h5>
                                     </div>
                                     <!-- upload numpy -->
                                     <div id="upload" class="tab-pane fade">
@@ -154,12 +192,16 @@
                                                         name="submit" class="btn btn-primary">
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-lg-12 text-center m-2" id="drawing">                                                                                                        
-                                                    <h3 id="successfullUpload" hidden="true"><i class="fa-solid fa-check-circle" style="color: gold;"></i> Numpy File Uploaded</h3>
-                                                </div> 
-                                            </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 text-center m-2" id="drawing">
+                                        <h3 id="successfullUpload" hidden="true"><i
+                                                class="fa-solid fa-check-circle" style="color: gold;"></i>
+                                            Ready to predict</h3>
+                                            <span class="spinner-border spinner-border-sm" id="readySpinner" role="status"
+                                    aria-hidden="true" hidden="true"></span>
                                     </div>
                                 </div>
                             </div>
@@ -167,15 +209,44 @@
                             <h3>Step 2: Let the Deep Learning Predict the Emotion!</h3>
                             <!-- show 2 images next to eachother -->
                             <div class="col-lg m-2">
-                                <div class="row m-2">
+                                <div class="row m-2" hidden="true">
                                     <div id="audio-container" class="col-lg-12 text-center">
                                     </div>
                                 </div>
                                 <button onclick="predictModel()" id="predict"
                                     class="btn btn-primary mb-2">Predict</button>
-                                    <span class="spinner-border spinner-border-sm" id="predictingSpinner" role="status" aria-hidden="true" hidden="true"></span>
-                                    <p style="text-align: center !important; font-size: 30; font-family:'Courier New', Courier, monospace;
-                                    font-weight:bold; color:blueviolet" id="predicted" hidden="true"></p>
+                                <span class="spinner-border spinner-border-sm" id="predictingSpinner" role="status"
+                                    aria-hidden="true" hidden="true"></span>
+                                
+                                <div id="predicted" hidden="true">
+
+                                <div class="progress mb-2" id="rotate" style="height: 30;">
+                                    <div id="predictedAngry" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Angry</div>
+                                </div>
+                                <div class="progress mb-2" id="rotate" style="height: 30;">
+                                    <div id="predictedDisgust" class="progress-bar" role="progressbar"
+                                        style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        Disgust</div>
+                                </div>
+                                <div class="progress mb-2" id="rotate" style="height: 30;">
+                                    <div id="predictedFear" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Fear</div>
+                                </div>
+                                <div class="progress mb-2" id="rotate" style="height: 30;">
+                                    <div id="predictedHappiness" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Happy</div>
+                                </div>
+                                <div class="progress mb-2" id="rotate" style="height: 30;">
+                                    <div id="predictedNeutral" class="progress-bar" role="progressbar"
+                                        style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        Neutral</div>
+                                </div>
+                                <div class="progress mb-2" id="rotate" style="height: 30;">
+                                    <div id="predictedSad" class="progress-bar" role="progressbar" style="width: 0%;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Sad</div>
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
