@@ -110,23 +110,13 @@ function confirm() {
 // defines a TF model load function
 async function loadModel(){	
   	
-  // loads the model
-  model = await tf.loadLayersModel('projects/image_colorization/model/model.json');
-  // model = await tf.loadGraphModel('image_colorization/model/model.json');
-  
-  // warm start the model. speeds up the first inference
-  // var inp = tf.randomUniform([1, 256, 256, 3], -1.0,1.0);
-  var inp = tf.zeros([1, 256, 256, 3]);
-  var inp = tf.cast(inp, dtype = 'float32');
-  // print weights
-  // for (let i = 0; i < model.getWeights().length; i++) {
-  //   console.log(model.getWeights()[i].dataSync());
-  // }
-  var y = model.apply(inp, {training: true});
-
-  // tf.browser.toPixels(tf.image.resizeBilinear(tf.squeeze(y),[500,500]).add(1).div(2).mul(255).cast('int32'),canvas);
-  $('*[id*=spinner]').hide();
-  // return model
+  // loads the model  
+  model = tf.loadLayersModel('projects/image_colorization/model/model.json').then((model) => {
+    var inp = tf.zeros([1, 256, 256, 3]);
+    var inp = tf.cast(inp, dtype = 'float32');
+    var y = model.apply(inp, {training: true});
+    $('*[id*=spinner]').hide();
+  });
   return model
 }
 
