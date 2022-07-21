@@ -16,7 +16,7 @@
 
 .header .blog-name a {
     color: #fff;
-    ;
+    text-decoration: none;
 }
 
 .header .navbar {
@@ -267,6 +267,17 @@
     .modal .modal-img-holder img {
         position: relative !important;
         top: -25% !important;
+    }
+    iframe {
+        width: 80vw;
+        height: 50vw;
+    }
+    img {
+        /* width: inherit !important; */
+        /* height: auto !important; */
+    }
+    .row {
+        overflow: overlay;
     }
 }
 

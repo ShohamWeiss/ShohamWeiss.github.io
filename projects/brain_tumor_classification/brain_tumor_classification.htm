@@ -2,7 +2,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="../../">
-
+    <title>Emotion Detector</title>            
+    
     <!-- bootrap.css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -38,7 +39,7 @@
 
 <body style="display:none;">
     <div id="navigation_bar"></div>
-    <div class="main-wrapper">
+    <div class="main-wrapper">        
         <section class="p-3 p-lg-2 theme-bg-light">
             <div class="container">
                 <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">To portfolio</a>
@@ -48,27 +49,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <!-- <img src="assets/images/rpidoorlock.png" alt="image"> -->
-                        <h1 class="text-center">Raspberry Pi Doorlock</h1>
+                        <h1 class="text-center">Brain Tumor Classification</h1>
                         <p class="text-center">
-                            This is a project I undertook during my senior year of undergrad.
-                            A bolt lock attachment that you can control with your phone. 3D printed and
-                            designed to fit and rotate bolt locks. A Raspberry Pi controls a servo motor.
-                            The Raspberry Pi also hosts a slick website for users to log into and control the doorlock.
+                            This is a project I undertook during my time getting my AI masters at the University of North Texas. A model that
+                            classifies 3 types of brain tumor. On top of that I created saliency maps for brain tumor localization.
                         </p>
-                        <div class="col-xs-12 text-center p-md-5">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/CXVXFkQ4kfY"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-
-                        <p><strong>Github:</strong> <a
-                                href="https://github.com/ShohamWeiss/Doorlock">github.com/ShohamWeiss/Doorlock</a>
+                        <p><strong>Colab Notebook:</strong>
+                            <a target="_blank" href="https://colab.research.google.com/drive/1qALcRQ9aF8yHO23w2QasDh84AnBObIyf?usp=sharing">Brain Tumor Classification</a></p>
+                            <hr>
                         </p>
-                        <hr>
-                        <div id="report"></div>
                     </div>
+                </div>
+                <div id="report">
+                    <base href="images/">
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 
 <script>
@@ -83,10 +80,10 @@
     $(document).ready(function () {
         // add navigation htm
         $(function () {
-            $("#report").load("projects/doorlock/DoorlockSummarized.htm", function () {
+            $("#report").load("projects/brain_tumor_classification/ProjectReport.htm", function () {
                 // load images folder
                 $("#report").contents().find("img").each(function () {
-                    $(this).attr("src", "projects/doorlock/" + $(this).attr("src"));
+                    $(this).attr("src", "projects/brain_tumor_classification/" + $(this).attr("src"));
                 });
             });
         });
@@ -100,3 +97,4 @@
         });
     });
 </script>
+<script src="projects/emotion_detector/emotion_detector.js"></script>
