@@ -137,14 +137,14 @@ crossorigin="anonymous"></script>
     <div id="navigation"></div>
     </section>  
     <section class="p-3 p-lg-5 theme-bg">
-      <div class="container">
+      <div class="container" style="max-width: none !important;">
       <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">To portfolio</a>
       <div class="row">
         <div class="col-md-12">
           <div id="canvas-container"></div>
           <h2>Particle system using WebGL.</h2>
           <h5> Particle systems are typically used to model fine-grained physical effects like fire, smoke, and water. This is something simpler and just renders a system of bouncing spheres in 3D.</h5>
-          <canvas id="myGLCanvas" style="width:80vw; height:40vw"></canvas>
+          <canvas id="myGLCanvas" width="2000" height="1000" style="width: 90%; height: auto"></canvas>
           <p style="font-size:30px;margin-left:10vw;font-weight:bold;">Move the invisible floor with ArrowUp and ArrowDown</p>
           <button id="but" onclick="reset()" style="font-size:30px;">Clear</button>
           <button id="but" onclick="AddSpheres()" style="font-size:30px;">Add 5</button>
