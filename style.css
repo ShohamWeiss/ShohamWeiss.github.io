@@ -273,8 +273,11 @@
         height: 50vw;
     }
     img {
-        /* width: inherit !important; */
-        /* height: auto !important; */
+        /* width: 80% !important; */
+    }
+
+    * {
+        word-break: break-word !important;
     }
 }
 
