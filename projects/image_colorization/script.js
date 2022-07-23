@@ -111,12 +111,11 @@ function confirm() {
 async function loadModel(){	
   	
   // loads the model  
-  model = tf.loadLayersModel('projects/image_colorization/model/model.json').then((model) => {
-    var inp = tf.zeros([1, 256, 256, 3]);
-    var inp = tf.cast(inp, dtype = 'float32');
-    var y = model.apply(inp, {training: true});
-    $('*[id*=spinner]').hide();
-  });
+  model = await tf.loadLayersModel('projects/image_colorization/model/model.json');
+  var inp = tf.zeros([1, 256, 256, 3]);
+  var inp = tf.cast(inp, dtype = 'float32');
+  var y = model.apply(inp, {training: true});
+  $('*[id*=spinner]').hide();
   return model
 }
 
