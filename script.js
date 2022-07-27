@@ -74,7 +74,7 @@ async function answerQuestion() {
         searchModel.findAnswers(question, passage).then(answers => {
             if (answers.length == 0) {
                 // Show the answers
-                document.getElementById("answer").innerHTML = "No answer found. Please try to rephrase your question.";
+                document.getElementById("answer").innerHTML = "No answer found. Try rephrasing.";
             } else {
                 console.log('Answers: ', answers);
                 document.getElementById("answer").innerHTML = answers[0]['text'];
