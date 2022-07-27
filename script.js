@@ -1,3 +1,4 @@
+var searchModel;
 $(document).ready(function() {
     $('body').show();
     /* ======= Isotope plugin ======= */
@@ -28,6 +29,10 @@ $(document).ready(function() {
             $(this).addClass('active');
         });
     });
+    qna.load().then(model => {
+        // Find the answers
+        searchModel = model;
+      });
 });
 
 function fillModal(a) {
@@ -52,3 +57,42 @@ function showProfessional() {
     document.getElementById("acad").hidden = true;
     document.body.style.background = "#F7F8FA";
 }
+
+async function answerQuestion() {
+    // make answerbox visible
+    var passage = document.body.innerText;
+    // load the aboutme.txt file
+    var client = new XMLHttpRequest();
+    client.open('GET', 'aboutme.txt');
+    client.onreadystatechange = function() {
+        passage += client.responseText;
+        // make spinner visible
+        document.getElementById("answerbox").hidden = true;
+        document.getElementById("spinner").hidden = false;
+        var question = document.getElementById("question").value;
+        // Find the answers
+        searchModel.findAnswers(question, passage).then(answers => {
+            if (answers.length == 0) {
+                // Show the answers
+                document.getElementById("answer").innerHTML = "No answer found. Please try to rephrase your question.";
+            } else {
+                console.log('Answers: ', answers);
+                document.getElementById("answer").innerHTML = answers[0]['text'];
+            }
+            document.getElementById("answerbox").hidden = false;
+            document.getElementById("spinner").hidden = true;
+        });
+    }
+    client.send();
+}
+
+// when document is ready
+$(document).ready(function() {
+    // when clicking enter while typing in the question input, click on the searchButton
+    document.getElementById("question").addEventListener("keypress", function(event) {
+        if (event.key == "Enter") {
+            event.preventDefault();
+            document.getElementById("searchButton").click();
+        }
+    });
+});

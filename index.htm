@@ -4,9 +4,11 @@
 
     <!-- bootrap.css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script defer src="assets/fontawesome-free-6.1.1-web/js/all.js"></script>
-        
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="assets/fontawesome-free-6.1.1-web/js/all.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
     <!-- bootstap.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -17,6 +19,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
         
     <!-- jQuery -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
@@ -25,6 +31,14 @@
     <!-- imageload/ isotope -->
     <script type="text/javascript " src="assets/plugins/imagesloaded.pkgd.min.js "></script>
     <script type="text/javascript " src="assets/plugins/isotope.pkgd.min.js "></script>
+
+    <!-- tf -->
+        <!-- Load TensorFlow.js. This is required to use the qna model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+        <!-- Load the qna model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
+
+
     <!-- myfiles -->
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -67,6 +81,25 @@
                             <a class="btn btn-secondary mb-3" href="resume.htm"><i
                                     class="fas fa-file-alt mr-2"></i><span class="d-none d-md-inline">View</span>
                                 Resume</a>
+                        </div>
+                        <div>
+                            <!-- search bar with button for searching -->
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="question" placeholder="Search anything about me" aria-label="Search"
+                                    aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" id="searchButton" onclick="answerQuestion()" style="background-image: linear-gradient(to bottom right, #cfe4fb,#007bff, #2188f6, #6c757d);" type="button">Search</button>
+                                </div>
+                            </div>
+                        <!-- astricks small text -->
+                        <small id="basic-addon2" class="form-text text-muted mb-2">*AI will provide the answer based on this website content.</small>
+                        <!-- Light gray box with text inside it -->
+                        <button id="spinner" class="btn btn-secondary" type="button" disabled hidden="true">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        </button>
+                        <button id="answerbox" class="btn btn-secondary" style="width: 100%; text-align: left;" type="button" disabled hidden="true">
+                                <p class="typewriter" id="answer">42</p>
+                        </button>
                         </div>
                     </div>
                     <!--//media-body-->
