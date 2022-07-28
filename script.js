@@ -1,4 +1,5 @@
 var searchModel;
+var passage;
 $(document).ready(function() {
     $('body').show();
     /* ======= Isotope plugin ======= */
@@ -29,10 +30,6 @@ $(document).ready(function() {
             $(this).addClass('active');
         });
     });
-    qna.load().then(model => {
-        // Find the answers
-        searchModel = model;
-      });
 });
 
 function fillModal(a) {
@@ -58,36 +55,68 @@ function showProfessional() {
     document.body.style.background = "#F7F8FA";
 }
 
+// async function sendEmail()
+// {
+//     // send email with gmail api
+//     // var name = document.getElementById("name").value;
+//     // var email = document.getElementById("email").value;
+//     // var subject = document.getElementById("subject").value;
+//     // var message = document.getElementById("message").value;
+//     var body = "Name: " // + name + "\nEmail: " + email + "\nSubject: " + subject + "\nMessage: " + message;
+//     var client = new XMLHttpRequest();
+//     client.open('GET', 'https://script.google.com/macros/s/AKfycbzPm6T8X9MkV7B9NvH1V7zEJfZnY7Z1KcJvF7Q8Xg/exec?body=' + body);
+//     client.onreadystatechange = function() {
+//         alert("Email sent!");
+//     }
+//     client.send();
+
+// }
+
+sendEmail();
+
 async function answerQuestion() {
-    // make answerbox visible
-    var passage = document.body.innerText;
-    // load the aboutme.txt file
-    var client = new XMLHttpRequest();
-    client.open('GET', 'aboutme.txt');
-    client.onreadystatechange = function() {
-        passage += client.responseText;
-        // make spinner visible
-        document.getElementById("answerbox").hidden = true;
-        document.getElementById("spinner").hidden = false;
-        var question = document.getElementById("question").value;
-        // Find the answers
-        searchModel.findAnswers(question, passage).then(answers => {
-            if (answers.length == 0) {
-                // Show the answers
-                document.getElementById("answer").innerHTML = "No answer found. Try rephrasing.";
-            } else {
-                console.log('Answers: ', answers);
-                document.getElementById("answer").innerHTML = answers[0]['text'];
+    // make spinner visible
+    document.getElementById("answerbox").hidden = true;
+    document.getElementById("spinner").hidden = false;
+    if (searchModel == null) {
+            qna.load().then(model => {
+                // Find the answers
+                searchModel = model;
+            // make answerbox visible
+            passage = document.body.innerText;
+            // load the aboutme.txt file
+            var client = new XMLHttpRequest();
+            client.open('GET', 'aboutme.txt');
+            client.onreadystatechange = function() {
+                passage += client.responseText;
+                runSearchInference()
             }
-            document.getElementById("answerbox").hidden = false;
-            document.getElementById("spinner").hidden = true;
+            client.send();
         });
+    } else {
+        runSearchInference()
     }
-    client.send();
+
 }
 
-// when document is ready
-$(document).ready(function() {
+function runSearchInference()
+{
+    var question = document.getElementById("question").value;
+    // Find the answers
+    searchModel.findAnswers(question, passage).then(answers => {
+        if (answers.length == 0) {
+            // Show the answers
+            document.getElementById("answer").innerHTML = "No answer found. Try rephrasing.";
+        } else {
+            console.log('Answers: ', answers);
+            document.getElementById("answer").innerHTML = answers[0]['text'];
+        }
+        document.getElementById("answerbox").hidden = false;
+        document.getElementById("spinner").hidden = true;
+    });
+}
+
+function allowEnter() {
     // when clicking enter while typing in the question input, click on the searchButton
     document.getElementById("question").addEventListener("keypress", function(event) {
         if (event.key == "Enter") {
@@ -95,4 +124,4 @@ $(document).ready(function() {
             document.getElementById("searchButton").click();
         }
     });
-});
+}

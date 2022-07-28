@@ -1,4 +1,5 @@
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -81,26 +82,44 @@
                             <a class="btn btn-secondary mb-3" href="resume.htm"><i
                                     class="fas fa-file-alt mr-2"></i><span class="d-none d-md-inline">View</span>
                                 Resume</a>
+                            <button class="btn btn-primary ml-2 mb-3" id="toggleSearch" data-bs-toggle="modal" data-bs-target="#searchModal"
+                                style="background-color: rgb(214, 183, 103); border-color: #ffdc95;" type="button">
+                                <i class="fa fa-brain mr-2"></i>Ask an AI About Me</button>
                         </div>
-                        <div class="mb-2">
-                            <!-- search bar with button for searching -->
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="question" placeholder="Search anything about me" aria-label="Search"
-                                    aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" id="searchButton" onclick="answerQuestion()" style="background-image: linear-gradient(to bottom right, #cfe4fb,#007bff, #2188f6, #6c757d);" type="button">Search</button>
+                        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <!-- icon of a brain -->
+                                        <div style="color:rgb(214, 183, 103);">
+                                        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-brain mr-2"></i>What would you like to know?</h5>
+                                        </div>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- search bar with button for searching -->
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="question" placeholder="Ask the AI questions about me." aria-label="Search"
+                                                aria-describedby="basic-addon2" value="What is Shoham's favorite color?" onfocus="allowEnter()">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" id="searchButton" onclick="answerQuestion()"
+                                                    style="background-color: rgb(214, 183, 103); border-color: #ffdc95;" type="button">Search</button>
+                                            </div>
+                                        </div>
+                                        <!-- astricks small text -->
+                                        <small id="basic-addon2" class="form-text text-muted mb-2">*AI will provide the answer based on this website content. This AI is not good at yes/no questions, its better at 'What' questions.</small>
+                                        <!-- Light gray box with text inside it -->
+                                        <button id="spinner" class="btn btn-secondary" type="button" disabled hidden="true">
+                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        </button>
+                                        <button id="answerbox" class="btn btn-secondary" style="width: 100%; text-align: left;" type="button" disabled hidden="true">
+                                                <p class="typewriter" id="answer">42</p>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        <!-- astricks small text -->
-                        <small id="basic-addon2" class="form-text text-muted mb-2">*AI will provide the answer based on this website content.</small>
-                        <!-- Light gray box with text inside it -->
-                        <button id="spinner" class="btn btn-secondary" type="button" disabled hidden="true">
-                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        </button>
-                        <button id="answerbox" class="btn btn-secondary" style="width: 100%; text-align: left;" type="button" disabled hidden="true">
-                                <p class="typewriter" id="answer">42</p>
-                        </button>
                         </div>
+                        
                     </div>
                     <!--//media-body-->
                     <img class="profile-image-big mb-3 mb-lg-0 ml-lg-3 mr-md-0" src="assets/images/profile-big.JPG"
@@ -317,4 +336,6 @@
             $(this).load('portfolio.htm #' + card_id);
         });
     });
+    // jquery make element visible on button click
+
 </script>
