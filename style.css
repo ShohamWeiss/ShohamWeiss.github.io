@@ -262,7 +262,7 @@
     }
     .card-img-holder img {
         flex-shrink: 0;
-        width: 100%;
+        width: 105%;
     }
     .modal .modal-img-holder img {
         position: relative !important;
@@ -387,4 +387,9 @@ animation: spinner .6s linear infinite;
 @keyframes blink-caret {
 from, to { border-color: transparent }
 50% { border-color: orange; }
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
 }
