@@ -5,26 +5,26 @@
 
     <!-- bootrap.css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script defer src="assets/fontawesome-free-6.1.1-web/js/all.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <!-- bootstap.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
-        
+
     <!-- jQuery -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,11 +34,13 @@
     <script type="text/javascript " src="assets/plugins/isotope.pkgd.min.js "></script>
 
     <!-- tf -->
-        <!-- Load TensorFlow.js. This is required to use the qna model. -->
+    <!-- Load TensorFlow.js. This is required to use the qna model. -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
-        <!-- Load the qna model. -->
+    <!-- Load the qna model. -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
 
+    <!-- smtp.js -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <!-- myfiles -->
     <script src="script.js"></script>
@@ -59,13 +61,11 @@
                         <div class="tagline mb-3">Machine Learning Engineer</div>
                         <div class="bio mb-4">
                             <ul style="list-style-type: none;padding: 0;margin: 0">
+                                <li><i class="fa-solid fa-brain" style="color: palevioletred;"></i> <strong>Masters in
+                                        Artificial Intelligence</strong> at University of North Texas in Dec 2023.</li>
                                 <li><i class="fa-solid fa-atom" style="color: green;"></i> <strong>B.Sc in Engineering
                                         Physics</strong> with
                                     a <strong>C.S Minor</strong> from the University of Illinois in May 2020.</li>
-                                <li><i class="fa-solid fa-brain" style="color: palevioletred;"></i> <strong>Masters in
-                                        Artificial Intelligence</strong> at University of North Texas in Dec 2023.</li>
-                                <li><i class="fa-solid fa-robot" style="color: silver;"></i> <strong>Automation
-                                        Development Engineer</strong> at American Family Insurance.</li>
                                 <li>
                                     <hr>
                                 </li>
@@ -82,44 +82,57 @@
                             <a class="btn btn-secondary mb-3 mr-2" href="resume.htm"><i
                                     class="fas fa-file-alt mr-2"></i><span class="d-none d-md-inline">View</span>
                                 Resume</a>
-                            <button class="btn btn-primary mb-3" id="toggleSearch" data-bs-toggle="modal" data-bs-target="#searchModal"
+                            <button class="btn btn-primary mb-3" id="toggleSearch" data-bs-toggle="modal"
+                                data-bs-target="#searchModal"
                                 style="background-color: rgb(214, 183, 103); border-color: #ffdc95;" type="button">
                                 <i class="fa fa-brain mr-2"></i>Ask an AI About Me</button>
                         </div>
-                        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <!-- icon of a brain -->
                                         <div style="color:rgb(214, 183, 103);">
-                                        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-brain mr-2"></i>What would you like to know?</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel"><i
+                                                    class="fa fa-brain mr-2"></i>What would you like to know?</h5>
                                         </div>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <!-- search bar with button for searching -->
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="question" placeholder="Ask the AI questions about me." aria-label="Search"
-                                                aria-describedby="basic-addon2" value="What is Shoham's favorite color?" onfocus="allowEnter()">
+                                            <input type="text" class="form-control" id="question"
+                                                placeholder="Ask the AI questions about me." aria-label="Search"
+                                                aria-describedby="basic-addon2" value="What is Shoham's favorite color?"
+                                                onfocus="allowEnter()">
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary" id="searchButton" onclick="answerQuestion()"
-                                                    style="background-color: rgb(214, 183, 103); border-color: #ffdc95;" type="button">Search</button>
+                                                <button class="btn btn-primary" id="searchButton"
+                                                    onclick="answerQuestion()"
+                                                    style="background-color: rgb(214, 183, 103); border-color: #ffdc95;"
+                                                    type="button">Search</button>
                                             </div>
                                         </div>
                                         <!-- astricks small text -->
-                                        <small id="basic-addon2" class="form-text text-muted mb-2">*AI will provide the answer based on this website's content. This AI is not good at yes/no questions, its better at 'What' questions.</small>
+                                        <small id="basic-addon2" class="form-text text-muted mb-2">*AI will provide the
+                                            answer based on this website's content. This AI is not good at yes/no
+                                            questions, its better at 'What' questions.</small>
                                         <!-- Light gray box with text inside it -->
-                                        <button id="spinner" class="btn btn-secondary" type="button" disabled hidden="true">
-                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        <button id="spinner" class="btn btn-secondary" type="button" disabled
+                                            hidden="true">
+                                            <span class="spinner-border spinner-border-sm" role="status"
+                                                aria-hidden="true"></span>
                                         </button>
-                                        <button id="answerbox" class="btn btn-secondary" style="width: 100%; text-align: left;" type="button" disabled hidden="true">
-                                                <p class="typewriter" id="answer">42</p>
+                                        <button id="answerbox" class="btn btn-secondary"
+                                            style="width: 100%; text-align: left;" type="button" disabled hidden="true">
+                                            <p class="typewriter" id="answer">42</p>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                     <!--//media-body-->
                     <img class="profile-image-big mb-3 mb-lg-0 ml-lg-3 mr-md-0" src="assets/images/profile-big.JPG"
@@ -133,15 +146,17 @@
                 <h2 class="section-title font-weight-bold mb-3">What I do</h2>
                 <div class="section-intro mb-5">
                     <ul style="list-style-type: none;padding: 0;margin: 0">
-                        <li>I am currently working on creating cloud engineering tools for the automation center of
+                        <li>I am currently finishing up my masters in AI. Previously I worked on creating cloud
+                            engineering tools for the automation center of
                             excellence at American Familty
-                            Insurance. I am also working on exploring deep learning architectures and applying them to
-                            interesting projects. I have experience working in Python, C# full stack applications, AWS,
-                            ELK, and more. Below is a quick overview of the main technologies I use.</li>
+                            Insurance. I am passionate about deep learning and am also working on applying deep learning
+                            them to
+                            interesting projects as seen on my portofolio. Below is a quick overview of main
+                            technologies I use.</li>
                         <hr>
                         <li>Want to find out more about my experience? Check out my <a href="resume.htm">online
                                 resume</a>. </li>
-                        <li>Want to see my projects and even interact with deep learning models I created? Check out my
+                        <li>Want to interact with deep learning models I created? Check out my
                             <a href="portfolio.htm">project portfolio</a>.
                         </li>
                     </ul>
@@ -154,16 +169,18 @@
                                 <img src="assets/images/pythonicon.webp" class="svg-inline--fa fa-java fa-w-14 mr-2">
                                 <img src="assets/images/pandas.svg" class="svg-inline--fa fa-java fa-w-14 mr-2">
                                 <img src="assets/images/django.svg" alt="c++"
-                                class="svg-inline--fa fa-java fa-w-14 mr-1">
+                                    class="svg-inline--fa fa-java fa-w-14 mr-1">
                                 <img src="assets/images/FastAPIPython.jpg" alt="c++"
-                                class="svg-inline--fa fa-java fa-w-16 mr-1">
+                                    class="svg-inline--fa fa-java fa-w-16 mr-1">
                                 <img src="assets/images/colab-logo.png" alt="c++"
                                     class="svg-inline--fa fa-java fa-w-16 mr-1">
                             </div>
                             <h3 class="item-title">Python</h3>
-                            <div class="item-desc">I have 5 years of experience coding in python. Using numpy,
-                                pandas, django, fastapi, and more. I code in a notebook style in Colab and in
-                                 an object oriented style in Visual Code.</div>
+                            <div class="item-desc">I have 6 years of experience coding in python. Using pytorch,
+                                tensorflow,
+                                scikit, numpy, pandas, django, fastapi, and more. Coding in a notebook style in Colab
+                                and in
+                                an object oriented style in Visual Code.</div>
                         </div>
                         <!--//item-inner-->
                     </div>
@@ -183,46 +200,48 @@
                                     class="svg-inline--fa fa-java fa-w-14 mr-2">
                             </div>
                             <h3 class="item-title">C Languages</h3>
-                            <div class="item-desc">I have 5 years of experience coding in C languages,
-                                coding in C#, C, and C++. Working with Blazor, ASP.NET Core, Entity Framework,
-                                Selenium, and more.
+                            <div class="item-desc">
+                                I have 6 years of experience coding in all C languages, focusing lately more on C#.
+                                I have worked with Blazor, ASP.NET Core, Entity Framework,
+                                Selenium, and much more.
                             </div>
                         </div>
                         <!--//item-inner-->
-                    </div>    
+                    </div>
                     <!-- ML -->
                     <div class="col-6 col-lg-3">
                         <div class="item-inner">
                             <div class="item-icon mb-2">
                                 <img src="assets/images/Tensorflow_logo.svg" class="svg-inline--fa fa-java fa-w-14">
                                 <img src="assets/images/pytorch-logo.png" class="svg-inline--fa fa-java fa-w-14">
-                                <img src="assets/images/dotnetml.png" class="svg-inline--fa fa-java fa-w-14">                                                                                             
+                                <img src="assets/images/dotnetml.png" class="svg-inline--fa fa-java fa-w-14">
                             </div>
                             <h3 class="item-title">Machine Learning</h3>
                             <div class="item-desc">
-                                I have experience with deep learning architectures such as CNNs, RNNs, and Transformers.
-                                Creating custom models and fine tunning pretrained models with TensorFlow, TFJS, Pytorch and ML.NET
-                                for NLP, Computer Vision, and more.
+                                I have 3 years of experience with deep learning architectures such as CNNs, RNNs, and Transformers.
+                                Creating custom models and fine tunning pretrained models with TensorFlow, TFJS, Pytorch
+                                and ML.NET
+                                for NLP, Computer Vision, Reinforcement Learning and more.
                             </div>
                         </div>
-                    </div>                
+                    </div>
                     <!-- Cloud -->
                     <div class="col-6 col-lg-3">
                         <div class="item-inner">
                             <div class="item-icon mb-2">
                                 <i class="fa-brands fa-aws mr-2" style="color: orange;"></i>
-                                <img src="assets/images/gcp.png" alt="gcp"
-                                    class="svg-inline--fa fa-java fa-w-14 mr-2">
+                                <img src="assets/images/gcp.png" alt="gcp" class="svg-inline--fa fa-java fa-w-14 mr-2">
                                 <img src="assets/images/elastic.png" alt="elastic"
                                     class="svg-inline--fa fa-java fa-w-14 mr-2">
                             </div>
                             <h3 class="item-title">Cloud</h3>
-                            <div class="item-desc">I mainly have experience working in AWS. Using Sagemaker, Lambda, S3, DynamoDB, Api Gateway, and more. I also
+                            <div class="item-desc">I have 2 years of experience working in AWS. Using Sagemaker, Lambda, S3,
+                                DynamoDB, Api Gateway, and more. I also
                                 have experience working with GCP and Elastic Cloud.
                             </div>
                         </div>
                         <!--//item-inner-->
-                    </div>                    
+                    </div>
 
                 </div>
                 <div class="row">
@@ -239,12 +258,12 @@
                                     class="svg-inline--fa fa-java fa-w-20 mr-1">
                             </div>
                             <h3 class="item-title">Front End</h3>
-                            <div class="item-desc">I have 4 years of experience in Javascript, html,
-                                    CSS and Bootstrap. This website is an artifact of these skills.</div>
+                            <div class="item-desc">I have 5 years of experience in Javascript, html,
+                                CSS and Bootstrap. This website is an artifact of these skills.</div>
                         </div>
                         <!--//item-inner-->
                     </div>
-                    <!-- Back End -->
+                    <!-- Database -->
                     <div class="col-6 col-lg-3">
                         <div class="item-inner">
                             <div class="item-icon mb-2">
@@ -259,9 +278,11 @@
                                 <img src="assets/images/mariadb.svg" alt="c++"
                                     class="svg-inline--fa fa-java fa-w-18 mr-1">
                             </div>
-                            <h3 class="item-title">Back End</h3>
-                            <div class="item-desc">I created web sites with back ends using DynamoDB, PostgreSQL, MySQL, and SQL Server.
-                                I made IOT servers with MariaDB for the back end. </div>
+                            <h3 class="item-title">Database</h3>
+                            <div class="item-desc">
+                                I have 6 years of experience working with databases for a variety of
+                                stacks using DynamoDB, PostgreSQL, MySQL, SQL Server, and MariaDB.
+                            </div>
                         </div>
                         <!--//item-inner-->
                     </div>
@@ -275,8 +296,8 @@
                                     class="svg-inline--fa fa-java fa-w-14 mr-3">
                             </div>
                             <h3 class="item-title">Git</h3>
-                            <div class="item-desc">I have 4 years of experience using git. I have used both
-                                GitHub, and GitLab for source control and for CI/CD.
+                            <div class="item-desc">I have 6 years of experience using git. I have used both
+                                GitHub, and GitLab managing source control code and creating CI/CD pipelines.
                             </div>
                         </div>
                         <!--//item-inner-->
@@ -291,9 +312,9 @@
                                     class="svg-inline--fa fa-java fa-w-14 mr-3">
                             </div>
                             <h3 class="item-title">IOT Devices</h3>
-                            <div class="item-desc">As seen in several of my projects, I have experience working with
-                                Raspberry Pis and
-                                Arduinos.
+                            <div class="item-desc">
+                                As seen in several of my projects, I have experience coding
+                                Raspberry Pis and Arduinos.
                             </div>
                         </div>
                         <!--//item-inner-->

@@ -55,25 +55,6 @@ function showProfessional() {
     document.body.style.background = "#F7F8FA";
 }
 
-// async function sendEmail()
-// {
-//     // send email with gmail api
-//     // var name = document.getElementById("name").value;
-//     // var email = document.getElementById("email").value;
-//     // var subject = document.getElementById("subject").value;
-//     // var message = document.getElementById("message").value;
-//     var body = "Name: " // + name + "\nEmail: " + email + "\nSubject: " + subject + "\nMessage: " + message;
-//     var client = new XMLHttpRequest();
-//     client.open('GET', 'https://script.google.com/macros/s/AKfycbzPm6T8X9MkV7B9NvH1V7zEJfZnY7Z1KcJvF7Q8Xg/exec?body=' + body);
-//     client.onreadystatechange = function() {
-//         alert("Email sent!");
-//     }
-//     client.send();
-
-// }
-
-sendEmail();
-
 async function answerQuestion() {
     // make spinner visible
     document.getElementById("answerbox").hidden = true;
