@@ -1,3 +1,4 @@
+About Shoham Weiss:
 First Name Shoham, Shoham has no middle name, Last Name Weiss.
 Shoham Weiss was born on August 5th, 1998 in Jerusalem, Israel. Shoham's age is currently 24. Shoham is currently alive. He has green eyes and brown hair.
 Shoham went to Centennial High School from 2012 to 2016.
@@ -25,6 +26,6 @@ The answer to the universe is 42.
 Shoham's secret is that he knows that you will ask this question ;)
 Shoham has 3 years on machine learning, and deep learning experience. He has worked on Computer Vision projects, NLP projects, and Reinforcement Learning projects.
 Shoham does know TensorFlow with 3 years of experience working in TensorFlow.
-Shoham does know Pytorch with 1 year of experience working in Pytorch.
+Shoham does know Pytorch with 2 year of experience working in Pytorch.
 Power is Newton Meters.
 Shoham is wearing clothes: a red Lee shirt with khaki pants, and a khaki hat.
