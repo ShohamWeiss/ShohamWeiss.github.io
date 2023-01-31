@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <title>3DHandGestureSelection</title>
+    <meta charset="utf-8">
+    <base href="../../">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- hand tracking library -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/2c93746884.js" crossorigin="anonymous"></script>
+    <!-- our stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects/3DHandPoseSelection/style.css">
+</head>
+
+<body>
+    <!-- a centered page -->
+    <!-- <div class="container"> -->
+    <div class="container">
+        <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">To portfolio</a>
+    </div>
+    </section>
+    <section class="p-3 p-lg-5 theme-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">3D Hand Pose Selection</h1>
+                    <p class="text-center" style="background: rgba(255,255,255,0.3);">
+                        This is a project I undertook while doing my AI masters at the University of
+                        North Texas. A pretrained model that
+                        predicts 3D key points from an image of a hand for hand tracking. This model is used to interact
+                        with a
+                        virtual UI.
+                    </p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <video hidden="true" id="video" width="640" height="480" autoplay></video>
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <!-- ul without bullet points -->
+        <ul style="list-style-type: none; position: absolute; text-align: left; background: rgba(255,255,255,0.4);">
+            <li class="m-2"><img class="m-2" src="projects/3DHandPoseSelection/neutral_hand.jpg" width="50vw"> (Open
+                Hand) Neutral.</li>
+            <li class="m-2"><img class="m-2" src="projects/3DHandPoseSelection/closed_hand.jpg" width="50vw"> (Closed
+                Hand) To select the object.</li>
+            <li class="m-2"><img class="m-2" src="projects/3DHandPoseSelection/lamma_hand.jpg" width="50vw"> (Lamma) To
+                trigger speaking the sentence.</li>
+            <li class="m-2"><img class="m-2" src="projects/3DHandPoseSelection/shaka_hand.jpg" width="50vw"> (Shaka) To
+                clear the sentence.</li>
+            <li class="m-2"><img class="m-2" src="projects/3DHandPoseSelection/spideman_hand.jpg" width="50vw">
+                (Spiderman) To go back in the UI.</li>
+        </ul>
+    </div>
+    <!-- box displaying current sentence text across the top of the screen
+        with a speak button next to it -->
+    <div class="row m-2">
+        <div class="col-12">
+            <div class="text-center">
+                <!-- inline -->
+                <div class="d-inline-block">
+                    <div class="d-inline-block">
+                        <button id="sentence" style="font-size: 60px;" disabled="true"
+                            class="btn btn-secondary"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- An arc of buttons -->
+    <div class="row m-2">
+        <div class="col-12">
+            <div class="text-center">
+                <div id="optionsContainer" style="height: 70vh;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-12">
+            <div class="text-center">
+                <div id="parentOptionsContainer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- row for parent folder options -->
+    <div class="row m-2">
+        <div class="col-12">
+            <div class="text-center">
+                <div id="parentFolderOptionsContainer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="projects/3DHandPoseSelection/options.js"></script>
+<script src="projects/3DHandPoseSelection/OptionsNavigator.js"></script>
+<script src="projects/3DHandPoseSelection/HandStateHandler.js"></script>
+<script src="projects/3DHandPoseSelection/UIBuilder.js"></script>
+<script src="projects/3DHandPoseSelection/InteractionHandler.js"></script>
+<script src="projects/3DHandPoseSelection/script.js"></script>
+
+</html>
