@@ -186,4 +186,5 @@ function selectImage(img_id){
 
 // loads the model
 var model = loadModel();
+// let worker = new Worker('loadModel();');
 erase();
