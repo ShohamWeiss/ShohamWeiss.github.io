@@ -1,0 +1,105 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../../">
+    <title>Recommendation System</title>
+
+    <!-- bootrap.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="assets/fontawesome-free-6.1.1-web/js/all.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- bootstap.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- <script defer src="assets/fontawesome/js/all.js"></script> -->
+    <script defer src="assets/fontawesome-free-6.1.1-web/js/all.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Shoham Weiss Project</title>
+    <link rel="shortcut icon" href="assets/images/user-tie-solid.svg">
+</head>
+
+<body style="display:none;">
+    <div id="navigation_bar"></div>
+    <div class="main-wrapper">
+        <section class="p-3 p-lg-2 theme-bg-light">
+            <div class="container">
+                <a href="portfolio.htm" class="btn btn-primary mb-2 mt-2">To portfolio</a>
+            </div>
+        </section>
+        <section class="p-3 p-lg-5 theme-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-center">Recommendation System Project</h1>
+                        <p class="text-center">
+                            This is a project I undertook during my time getting my AI masters at the University of
+                            North Texas. The project involved running exploritory data analysis on a the large yelp open
+                            dataset. Then training a collaborative filtering model to recommend businesses to users.
+                            I used PySpark and Google colabs compute to perform both data analysis and model training.
+                        </p>
+                        <div class="col-xs-12 text-center p-md-5 m-2">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/vxtT1V9zDz0" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div id="report">
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        // add navigation htm
+        $(function () {
+            $("#navigation_bar").load("navigation.htm", function () {
+                jQuery('#PortfolioNav').addClass('active');
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        // add report html
+        $(function () {
+            $("#report").load("projects/recommender_system/YelpRecommendationSystemFinalReport.htm", function () {
+                // load images folder
+                $("#report").contents().find("img").each(function () {
+                    $(this).attr("src", "projects/recommender_system/" + $(this).attr("src"));
+                });
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        var pathname = window.location.href.split('#')[0];
+        $('a[href^="#"]').each(function () {
+            var $this = $(this),
+                link = $this.attr('href');
+            $this.attr('href', pathname + link);
+        });
+    });
+</script>
